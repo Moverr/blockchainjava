@@ -7,7 +7,7 @@ package com.kodeinc.bcn.db.controllers;
  
 import com.kodeinc.bcn.db.EngineJpaController;
 import com.kodeinc.bcn.db.entities.Users;
-import com.kodeinc.bcn.db.helper.Utilities;
+import com.kodeinc.bcn.helper.Utilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;

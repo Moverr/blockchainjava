@@ -5,8 +5,8 @@
  */
 package com.kodeinc.bcn.db;
 
-import com.codemovers.scholar.engine.helper.annotation.MainId;
-import com.kodeinc.bcn.db.helper.Utilities;
+import com.kodeinc.bcn.helper.annotation.MainId;
+import com.kodeinc.bcn.helper.Utilities;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
