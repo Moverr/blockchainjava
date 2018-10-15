@@ -41,10 +41,10 @@ public class UsersJpaController extends EngineJpaController {
         super(Users.class);
     }
 
-    public Users create(Users entity, SchoolData data) {
+    public Users create(Users entity) {
         EntityManager em = null;
         try {
-            em = getEntityManager(data.getExternalId());
+            em = getEntityManager();
             em.getTransaction().begin();
             em.persist(entity);
             em.getTransaction().commit();
@@ -60,10 +60,10 @@ public class UsersJpaController extends EngineJpaController {
 
     }
 
-    public void edit(Users user, SchoolData data) throws Exception {
+    public void edit(Users user) throws Exception {
         EntityManager em = null;
         try {
-            em = getEntityManager(data.getExternalId());
+            em = getEntityManager();
             em.getTransaction().begin();
             user = em.merge(user);
             em.getTransaction().commit();
@@ -71,7 +71,7 @@ public class UsersJpaController extends EngineJpaController {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 Integer id = user.getId().intValue();
-                if (findUser(id, data) == null) {
+                if (findUser(id) == null) {
                     throw new BadRequestException("The Inventory with id " + id + " no longer exists.");
                 }
             }
@@ -83,8 +83,8 @@ public class UsersJpaController extends EngineJpaController {
         }
     }
 
-    public Users findUser(Integer id, SchoolData data) {
-        EntityManager em = getEntityManager(data.getExternalId());
+    public Users findUser(Integer id) {
+        EntityManager em = getEntityManager();
 
         try {
             return em.find(Users.class, id);
@@ -93,8 +93,8 @@ public class UsersJpaController extends EngineJpaController {
         }
     }
 
-    private List<Users> findUsers(boolean all, int maxResults, int firstResult, SchoolData data) {
-        EntityManager em = getEntityManager(data.getExternalId());
+    private List<Users> findUsers(boolean all, int maxResults, int firstResult) {
+        EntityManager em = getEntityManager();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery<Users> cq = cb.createQuery(Users.class);
@@ -113,16 +113,16 @@ public class UsersJpaController extends EngineJpaController {
         }
     }
 
-    public List<Users> findUsers(SchoolData data) {
-        return findUsers(true, -1, -1, data);
+    public List<Users> findUsers() {
+        return findUsers(true, -1, -1);
     }
 
-    public List<Users> findUsers(int maxResults, int firstResult, SchoolData data) {
-        return findUsers(false, maxResults, firstResult, data);
+    public List<Users> findUsers(int maxResults, int firstResult) {
+        return findUsers(false, maxResults, firstResult);
     }
 
-    public int getCount(SchoolData data) {
-        EntityManager em = getEntityManager(data.getExternalId());
+    public int getCount() {
+        EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
 
@@ -136,9 +136,9 @@ public class UsersJpaController extends EngineJpaController {
         }
     }
 
-    public List<Users> findByUserName(String username, SchoolData data) {
+    public List<Users> findByUserName(String username) {
         List<Users> userList = new ArrayList<>();
-        EntityManager em = getEntityManager(data.getExternalId());
+        EntityManager em = getEntityManager();
         Query query = em.createNamedQuery("Users.findByUsername");
         query.setParameter("username", username);
         try {
@@ -155,10 +155,10 @@ public class UsersJpaController extends EngineJpaController {
         return userList;
     }
 
-    public Users login(String username, String password, SchoolData data) {
+    public Users login(String username, String password) {
 
         Users users = null;
-        EntityManager em = getEntityManager(data.getExternalId());
+        EntityManager em = getEntityManager();
 
         try {
             Query query = em.createNamedQuery("Users.login");
@@ -184,10 +184,10 @@ public class UsersJpaController extends EngineJpaController {
 
     }
 
-    public void destroy(Integer id, SchoolData tenantdata) throws Exception {
+    public void destroy(Integer id) throws Exception {
         EntityManager em = null;
         try {
-            em = getEntityManager(tenantdata.getExternalId());
+            em = getEntityManager();
             em.getTransaction().begin();
             Users _user;
             try {

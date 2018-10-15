@@ -5,9 +5,9 @@
  */
 package com.kodeinc.bcn.db.controllers;
 
-import com.codemovers.scholar.engine.db.entities.SchoolData;
-import com.codemovers.scholar.engine.db.entities.UserRole;
+
 import com.kodeinc.bcn.db.EngineJpaController;
+import com.kodeinc.bcn.db.entities.UserRole;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
@@ -35,10 +35,10 @@ public class UserRoleJpaController extends EngineJpaController {
         super(UserRole.class);
     }
 
-    public UserRole create(UserRole entity, SchoolData data) {
+    public UserRole create(UserRole entity) {
         EntityManager em = null;
         try {
-            em = getEntityManager(data.getExternalId());
+            em = getEntityManager();
             em.getTransaction().begin();
             em.persist(entity);
             em.getTransaction().commit();
@@ -54,10 +54,10 @@ public class UserRoleJpaController extends EngineJpaController {
 
     }
 
-    public UserRole edit(UserRole user_role, SchoolData data) throws Exception {
+    public UserRole edit(UserRole user_role) throws Exception {
         EntityManager em = null;
         try {
-            em = getEntityManager(data.getExternalId());
+            em = getEntityManager();
             em.getTransaction().begin();
             user_role = em.merge(user_role);
             em.getTransaction().commit();
@@ -65,7 +65,7 @@ public class UserRoleJpaController extends EngineJpaController {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 Integer id = user_role.getId().intValue();
-                if (findUser(id, data) == null) {
+                if (findUser(id) == null) {
                     throw new BadRequestException("The Inventory with id " + id + " no longer exists.");
                 }
             }
@@ -79,8 +79,8 @@ public class UserRoleJpaController extends EngineJpaController {
         return user_role;
     }
 
-    public UserRole findUser(Integer id, SchoolData data) {
-        EntityManager em = getEntityManager(data.getExternalId());
+    public UserRole findUser(Integer id) {
+        EntityManager em = getEntityManager();
 
         try {
             return em.find(UserRole.class, id);
@@ -89,10 +89,10 @@ public class UserRoleJpaController extends EngineJpaController {
         }
     }
 
-    public void destroy(Integer id, SchoolData tenantdata) throws Exception {
+    public void destroy(Integer id) throws Exception {
         EntityManager em = null;
         try {
-            em = getEntityManager(tenantdata.getExternalId());
+            em = getEntityManager();
             em.getTransaction().begin();
             UserRole _user_role;
             try {

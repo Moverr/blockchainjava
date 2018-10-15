@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 package com.kodeinc.bcn.db.controllers;
-
-import com.amazonaws.services.opsworks.model.UserProfile;
-import com.codemovers.scholar.engine.db.entities.SchoolData;
+  
 import com.kodeinc.bcn.db.EngineJpaController;
+import com.kodeinc.bcn.db.entities.UserProfile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
@@ -35,10 +34,10 @@ public class UserProfileJpaController extends EngineJpaController {
         super(UserProfile.class);
     }
 
-    public UserProfile create(UserProfile entity, SchoolData data) {
+    public UserProfile create(UserProfile entity) {
         EntityManager em = null;
         try {
-            em = getEntityManager(data.getExternalId());
+            em = getEntityManager();
             em.getTransaction().begin();
             em.persist(entity);
             em.getTransaction().commit();
@@ -54,10 +53,10 @@ public class UserProfileJpaController extends EngineJpaController {
 
     }
 
-    public UserProfile edit(UserProfile user_role, SchoolData data) throws Exception {
+    public UserProfile edit(UserProfile user_role) throws Exception {
         EntityManager em = null;
         try {
-            em = getEntityManager(data.getExternalId());
+            em = getEntityManager();
             em.getTransaction().begin();
             user_role = em.merge(user_role);
             em.getTransaction().commit();
@@ -65,7 +64,7 @@ public class UserProfileJpaController extends EngineJpaController {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 Integer id = user_role.getId().intValue();
-                if (findUserProfile(id, data) == null) {
+                if (findUserProfile(id) == null) {
                     throw new BadRequestException("The Inventory with id " + id + " no longer exists.");
                 }
             }
@@ -79,8 +78,8 @@ public class UserProfileJpaController extends EngineJpaController {
         return user_role;
     }
 
-    public UserProfile findUserProfile(Integer id, SchoolData data) {
-        EntityManager em = getEntityManager(data.getExternalId());
+    public UserProfile findUserProfile(Integer id) {
+        EntityManager em = getEntityManager();
 
         try {
             return em.find(UserProfile.class, id);
@@ -89,10 +88,10 @@ public class UserProfileJpaController extends EngineJpaController {
         }
     }
 
-    public void destroy(Integer id, SchoolData tenantdata) throws Exception {
+    public void destroy(Integer id) throws Exception {
         EntityManager em = null;
         try {
-            em = getEntityManager(tenantdata.getExternalId());
+            em = getEntityManager();
             em.getTransaction().begin();
             UserProfile _user_profile;
             try {

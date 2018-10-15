@@ -19,7 +19,6 @@ import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.ws.rs.BadRequestException;
 
 /**
  *
@@ -34,8 +33,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
     private final Class<T> entityClass;
     private final Field mainIdField;
 
-    private final EntityManagerFactoryProvider.DBModule dBModule = EntityManagerFactoryProvider.DBModule.SC_ENGINE;
-
+    
     public EngineJpaController(Class<T> entityClass) {
         this.entityClass = entityClass;
         Field f = null;
@@ -53,17 +51,14 @@ public class EngineJpaController<T extends Entity> implements Serializable {
 
     public EntityManager getEntityManager() {
         LOG.log(Level.INFO, " Creating Entity Manager ");
-        if (dBModule == null || database_name == null) {
-            throw new BadRequestException("DB MODULE OR DATABASE NOT SET");
-
-        }
+        
         return FACTORY_PROVIDER.getFactory().createEntityManager();
     }
 
     public Integer create(T entity) {
         EntityManager em = null;
         try {
-            em = getEntityManager(database_name);
+            
             em.getTransaction().begin();
             em.persist(entity);
             em.getTransaction().commit();
@@ -79,7 +74,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
         T entity;
         EntityManager em = null;
         try {
-            em = getEntityManager(database_name);
+            em = getEntityManager();
             entity = em.find(entityClass, id);
         } finally {
             if (em != null) {
@@ -89,16 +84,10 @@ public class EngineJpaController<T extends Entity> implements Serializable {
         return entity;
     }
 
-    public List<T> findEntities(String database_name) {
-        return findEntities(true, -1, -1, database_name);
-    }
-
-    public List<T> findEntities(int maxResults, int firstResult) {
-        return findEntities(false, maxResults, firstResult, database_name);
-    }
+    
 
     private List<T> findEntities(boolean all, int maxResults, int firstResult) {
-        EntityManager em = getEntityManager(database_name);
+        EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
 
@@ -128,7 +117,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
         }
 
         List<T> returnValue = new ArrayList<>();
-        EntityManager em = getEntityManager(database_name);
+        EntityManager em = getEntityManager();
         try {
             TypedQuery<T> query = em.createNamedQuery(namedQuery, entityClass);
 
@@ -150,7 +139,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
     public void edit(T entity) throws Exception {
         EntityManager em = null;
         try {
-            em = getEntityManager(database_name);
+            em = getEntityManager();
             em.getTransaction().begin();
             em.merge(entity);
             em.getTransaction().commit();
@@ -158,9 +147,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 Integer id = entity.getId();
-                if (find(id, database_name) == null) {
-                    throw new Exception("The entity with id " + id + " no longer exists.");
-                }
+               
             }
             throw ex;
         } finally {
@@ -186,7 +173,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
             }
         }
 
-        EntityManager entityManager = getEntityManager(database_name);
+        EntityManager entityManager = getEntityManager();
         List mainIdList = null;
 
         try {
