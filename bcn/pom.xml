@@ -212,7 +212,17 @@
   	        <artifactId>api</artifactId>
   	        <version>1.1.2</version> <!-- for a specific version see the list of tags -->
         </dependency>
-             
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>2.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+            <version>2.5.2</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
         
