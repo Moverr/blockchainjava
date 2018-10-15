@@ -51,16 +51,16 @@ public class EngineJpaController<T extends Entity> implements Serializable {
 
     }
 
-    public EntityManager getEntityManager(String database_name) {
+    public EntityManager getEntityManager() {
         LOG.log(Level.INFO, " Creating Entity Manager ");
         if (dBModule == null || database_name == null) {
             throw new BadRequestException("DB MODULE OR DATABASE NOT SET");
 
         }
-        return FACTORY_PROVIDER.getFactory(dBModule, database_name).createEntityManager();
+        return FACTORY_PROVIDER.getFactory().createEntityManager();
     }
 
-    public Integer create(T entity, String database_name) {
+    public Integer create(T entity) {
         EntityManager em = null;
         try {
             em = getEntityManager(database_name);
@@ -75,7 +75,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
         return entity.getId();
     }
 
-    public T find(Integer id, String database_name) {
+    public T find(Integer id) {
         T entity;
         EntityManager em = null;
         try {
@@ -93,11 +93,11 @@ public class EngineJpaController<T extends Entity> implements Serializable {
         return findEntities(true, -1, -1, database_name);
     }
 
-    public List<T> findEntities(int maxResults, int firstResult, String database_name) {
+    public List<T> findEntities(int maxResults, int firstResult) {
         return findEntities(false, maxResults, firstResult, database_name);
     }
 
-    private List<T> findEntities(boolean all, int maxResults, int firstResult, String database_name) {
+    private List<T> findEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager(database_name);
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
@@ -116,7 +116,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
         }
     }
 
-    public List<T> findByNamedQuery(String namedQuery, String[] parameterKeys, Object[] parameterValues, String logId, String database_name) {
+    public List<T> findByNamedQuery(String namedQuery, String[] parameterKeys, Object[] parameterValues, String logId) {
         if (parameterKeys == null && parameterValues == null) {
             return null;
         } else if (parameterKeys != null && parameterValues == null) {
@@ -147,7 +147,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
         return returnValue;
     }
 
-    public void edit(T entity, String database_name) throws Exception {
+    public void edit(T entity) throws Exception {
         EntityManager em = null;
         try {
             em = getEntityManager(database_name);
@@ -170,7 +170,7 @@ public class EngineJpaController<T extends Entity> implements Serializable {
         }
     }
 
-    public List<T> getMainIds(boolean all, Object startMainId, Integer offset, Integer limit, String database_name) {
+    public List<T> getMainIds(boolean all, Object startMainId, Integer offset, Integer limit) {
         if (mainIdField == null) {
             return null;
         }

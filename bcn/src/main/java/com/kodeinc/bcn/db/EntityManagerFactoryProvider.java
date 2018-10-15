@@ -39,21 +39,12 @@ public class EntityManagerFactoryProvider {
         return instance;
     }
 
-    public EntityManagerFactory getFactory(DBModule dBModule, String database) {
+    public EntityManagerFactory getFactory() {
 
         EntityManagerFactory factory = null;
 
-        try {
-//            if (factories.containsKey(database)) {
-//                LOG.log(Level.INFO, "Re Using Existing Database ");
-//                factory = factories.get(database);
-//            } else {
-//                LOG.log(Level.INFO, " ====   LIKE REALLY  == {0} ", database);
-//
-//                factory = createFactory(dBModule, database);
-//            }
-
-            factory = createFactory(dBModule, database);
+        try { 
+            factory = createFactory();
         } catch (Exception er) {
             throw er;
         }
@@ -62,35 +53,25 @@ public class EntityManagerFactoryProvider {
 
     }
 
-    public EntityManagerFactory createFactory(DBModule dBModule, String database) {
+    public EntityManagerFactory createFactory() {
 
-        LOG.log(Level.INFO, " ====   {0} ====  ", database);
+ 
 
         EntityManagerFactory emf = null;
         Map<String, String> properties = new HashMap<>();
 
         //properties.put("hibernate.connection.url", "jdbc:mysql://" + getHost(dBModule) + "/" + database);
-        properties.put("hibernate.connection.url", "jdbc:mysql://" + getHost(dBModule) + ":3306/" + database + "?useSSL=false");
+        properties.put("hibernate.connection.url", "jdbc:mysql://bcn:3306/bcn?useSSL=false");
 
-        properties.put("hibernate.connection.username", getUsername(dBModule));
-        properties.put("hibernate.connection.password", getPassword(dBModule));
-        properties.put("hibernate.ejb.entitymanager_factory_name", database);
+        properties.put("hibernate.connection.username", "root");
+        properties.put("hibernate.connection.password", "mysql");
+        properties.put("hibernate.ejb.entitymanager_factory_name", "bcn");
         try {
 
             LOG.log(Level.SEVERE, "     PASS THREE ");
 
             // properties
-            switch (dBModule.toString()) {
-                case "SC_BACK":
-                    emf = Persistence.createEntityManagerFactory("scholar", properties);
-                    break;
-                case "SC_ENGINE":
-                    emf = Persistence.createEntityManagerFactory("engine", properties);
-                    break;
-                default:
-                    emf = Persistence.createEntityManagerFactory("scholar", properties);
-                    break;
-            }
+              emf = Persistence.createEntityManagerFactory("engine", properties);
 
         } catch (Exception e) {
             LOG.log(Level.SEVERE, "Un Expected Error {0}", e.getStackTrace());

@@ -66,7 +66,7 @@ public abstract class JpaController<T extends Entity> implements Serializable {
             throw new BadRequestException("DB MODULE OR DATABASE NOT SET");
 
         }
-        return FACTORY_PROVIDER.getFactory(dBModule, database_name).createEntityManager();
+        return FACTORY_PROVIDER.getFactory().createEntityManager();
     }
 
     public Integer create(T entity) {

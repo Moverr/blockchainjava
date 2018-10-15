@@ -1,6 +1,7 @@
 package com.kodeinc.bcn.db.helper.logfilters;
 
  
+import com.kodeinc.bcn.db.helper.Utilities;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,7 +19,7 @@ public class LogInputRequestFilter implements ContainerRequestFilter {
 
     private static final Logger LOG = Logger.getLogger(LogInputRequestFilter.class.getName());
 
-    public SchoolData schoolData = null;
+ 
     @Context
     private UriInfo uriInfo;
 
@@ -29,13 +30,7 @@ public class LogInputRequestFilter implements ContainerRequestFilter {
             LOG.log(Level.INFO, "------------------------------ session start -----------------------------------");
             String logId = Utilities.getLogId();
 
-            if (requestContext.getHeaderString("schoolname") != null) {
-                LOG.log(Level.INFO, "------------------------------ MOVER KIOLO -----------------------{0}------------", requestContext.getHeaderString("schoolname"));
-
-                schoolData = Utilities.getSchoolData(requestContext.getHeaderString("schoolname"), null, logId);
-                //todo: make sure that the school data exists
-                LOG.log(Level.INFO, "------------------------------ pass pass me -----------------------{0}------------", schoolData.getExternalId());
-
+            if (requestContext.getHeaderString("schoolname") != null) { 
                 // validate school_data
                 logId = requestContext.getHeaderString("schoolname") + "_" + logId;
             } else {

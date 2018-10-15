@@ -6,14 +6,13 @@
 package com.kodeinc.bcn.db.controllers;
 
 import com.amazonaws.services.opsworks.model.UserProfile;
-import com.codemovers.scholar.engine.db.EngineJpaController;
 import com.codemovers.scholar.engine.db.entities.SchoolData;
+import com.kodeinc.bcn.db.EngineJpaController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.ws.rs.BadRequestException;
-import static org.eclipse.persistence.jpa.JpaHelper.getEntityManager;
 
 /**
  *

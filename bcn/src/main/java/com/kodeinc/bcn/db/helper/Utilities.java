@@ -2,8 +2,9 @@ package com.kodeinc.bcn.db.helper;
  
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kodeinc.bcn.db.annotation.ConditionallyMandatory;
+import com.kodeinc.bcn.db.annotation.Mandatory;
 import com.kodeinc.bcn.db.helper.exceptions.InternalErrorException;
-import com.kodeinc.bcn.db.helper.exceptions.UnauthorizedException;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -425,24 +426,8 @@ Using SHA-256 :
         return new BigInteger(Long.toString(System.currentTimeMillis() - 1000000000000L)).toString(36).toUpperCase();
     }
 
-    public static SchoolData tenantdata;
-
-    public static SchoolData getSchoolData(String schoolName, String authentication, String logId) {
-
-        LOG.log(Level.INFO, " ++++++++++++++++++++++= ");
-        if (schoolName != null) {
-
-            tenantdata = SchoolDataJpaController.getInstance().findSchoolDataByName(schoolName);
-        }
-
-        if (tenantdata == null) {
-            LOG.log(Level.INFO, "INVALID SCHOOL ACCOUNT ");
-            throw new UnauthorizedException("INVALID SCHOOL ACCOUNT");
-        }
-
-        return tenantdata;
-    }
-
+  
+  
     private static final String[] permissions_list = {"ALL_FUNCTIONS"};
 
     /**

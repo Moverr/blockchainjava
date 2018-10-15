@@ -5,9 +5,9 @@
  */
 package com.kodeinc.bcn.db.controllers;
 
-import com.codemovers.scholar.engine.db.EngineJpaController;
 import com.codemovers.scholar.engine.db.entities.SchoolData;
 import com.codemovers.scholar.engine.db.entities.UserRole;
+import com.kodeinc.bcn.db.EngineJpaController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;

@@ -4,13 +4,10 @@
  * and open the template in the editor.
  */
 package com.kodeinc.bcn.db.controllers;
-
-import com.codemovers.scholar.engine.db.EngineJpaController;
-import com.codemovers.scholar.engine.db.entities.Roles;
-import com.codemovers.scholar.engine.db.entities.SchoolData;
-import com.codemovers.scholar.engine.db.entities.Users;
-import com.codemovers.scholar.engine.helper.Utilities;
-import com.codemovers.scholar.engine.helper.exceptions.BadRequestException;
+ 
+import com.kodeinc.bcn.db.EngineJpaController;
+import com.kodeinc.bcn.db.entities.Users;
+import com.kodeinc.bcn.db.helper.Utilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -20,8 +17,8 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Order;
 import javax.persistence.criteria.Root;
+import javax.ws.rs.BadRequestException;
 
 /**
  *
