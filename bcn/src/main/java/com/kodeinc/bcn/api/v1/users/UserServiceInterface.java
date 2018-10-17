@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.users;
+package com.kodeinc.bcn.api.v1.users;
 
-import com.codemovers.scholar.engine.api.v1.accounts.entities.AuthenticationResponse;
 import com.codemovers.scholar.engine.api.v1.users.entities.Login;
 import com.codemovers.scholar.engine.api.v1.users.entities.UserResponse;
-import com.codemovers.scholar.engine.api.v1.users.entities._User;
-import com.codemovers.scholar.engine.db.entities.SchoolData;
-import com.codemovers.scholar.engine.db.entities.Users;
+import com.codemovers.scholar.engine.api.v1.users.entities._User; 
+import com.kodeinc.bcn.api.v1.accounts.entities.AuthenticationResponse;
 
 /**
  *
@@ -33,7 +31,7 @@ public interface UserServiceInterface {
      * @return
      * @throws Exception
      */
-    UserResponse create(SchoolData data, _User entity) throws Exception;
+    UserResponse create( _User entity) throws Exception;
 
     /**
      *
@@ -42,7 +40,7 @@ public interface UserServiceInterface {
      * @return
      * @throws Exception
      */
-    UserResponse getById(SchoolData schoolData, Integer Id) throws Exception;
+    UserResponse getById(Integer Id) throws Exception;
 
     //todo: retrieve authentication
     /**
@@ -54,7 +52,7 @@ public interface UserServiceInterface {
      * @return
      * @throws Exception
      */
-    AuthenticationResponse login(SchoolData schoolData, Login login, String logid) throws Exception;
+    AuthenticationResponse login(Login login, String logid) throws Exception;
 
     //todo: validate authenticaton
     /**
@@ -64,6 +62,6 @@ public interface UserServiceInterface {
      * @return
      * @throws Exception
      */
-    AuthenticationResponse validateAuthentication(SchoolData schoolData, String authentication) throws Exception;
+    AuthenticationResponse validateAuthentication(String authentication) throws Exception;
 
 }

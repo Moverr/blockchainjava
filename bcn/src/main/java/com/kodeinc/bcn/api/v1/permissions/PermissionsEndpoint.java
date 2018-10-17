@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.permissions;
+package com.kodeinc.bcn.api.v1.permissions;
 
-import com.codemovers.scholar.engine.api.v1.abstracts.AbstractEndpoint;
 import com.codemovers.scholar.engine.api.v1.accounts.entities.AuthenticationResponse;
+import com.codemovers.scholar.engine.api.v1.permissions.PermissionsService;
 import com.codemovers.scholar.engine.api.v1.permissions.entities.PermissionsResponse;
 import com.codemovers.scholar.engine.api.v1.permissions.entities._Permission;
-import com.codemovers.scholar.engine.api.v1.roles.RolesEndpoint;
-import com.codemovers.scholar.engine.api.v1.roles.entities.RoleResponse;
-import com.codemovers.scholar.engine.api.v1.users.UserService;
-import com.codemovers.scholar.engine.db.entities.SchoolData;
-import static com.codemovers.scholar.engine.helper.Utilities.tenantdata;
+import com.codemovers.scholar.engine.db.entities.SchoolData; 
+import com.kodeinc.bcn.api.v1.abstracts.AbstractEndpoint;
+import com.kodeinc.bcn.api.v1.users.UserService;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;

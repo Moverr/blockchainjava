@@ -33,7 +33,7 @@ public abstract class AbstractEndpoint<T, Z> implements AbstractEndpointInterfac
     public void validateAuthentication(String authentication) {
         try {
             //todo: validate login functionality
-            UserService.getInstance().validateAuthentication(schoolData, authentication);
+            UserService.getInstance().validateAuthentication( authentication);
         } catch (Exception ex) {
             Logger.getLogger(AbstractEndpoint.class.getName()).log(Level.SEVERE, null, ex);
             throw new BadRequestException("INVALID CREDENTIALS");

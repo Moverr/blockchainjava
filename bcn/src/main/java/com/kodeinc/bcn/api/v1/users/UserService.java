@@ -3,33 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.users;
+package com.kodeinc.bcn.api.v1.users;
 
-import com.codemovers.scholar.engine.api.v1.abstracts.AbstractService;
-import com.codemovers.scholar.engine.api.v1.accounts.entities.AuthenticationResponse;
-import com.codemovers.scholar.engine.api.v1.profile.ProfileService;
-import com.codemovers.scholar.engine.api.v1.profile.entities.ProfileResponse;
 import com.codemovers.scholar.engine.api.v1.users.entities.Login;
-import com.codemovers.scholar.engine.api.v1.roles.RolesService;
 import com.codemovers.scholar.engine.api.v1.permissions.entities.PermissionsResponse;
-import com.codemovers.scholar.engine.api.v1.roles.entities.RoleResponse;
-import com.codemovers.scholar.engine.api.v1.staff.StaffService;
 import com.codemovers.scholar.engine.api.v1.users.entities.UserResponse;
 import com.codemovers.scholar.engine.api.v1.users.entities._User;
-import com.codemovers.scholar.engine.db.controllers.UserProfileJpaController;
-import com.codemovers.scholar.engine.db.controllers.UserRoleJpaController;
-import com.codemovers.scholar.engine.db.controllers.UsersJpaController;
-import com.codemovers.scholar.engine.db.entities.Permissions;
-import com.codemovers.scholar.engine.db.entities.Profile;
-import com.codemovers.scholar.engine.db.entities.Roles;
-import com.codemovers.scholar.engine.db.entities.SchoolData;
-import com.codemovers.scholar.engine.db.entities.Staff;
-import com.codemovers.scholar.engine.db.entities.UserProfile;
-import com.codemovers.scholar.engine.db.entities.UserRole;
-import com.codemovers.scholar.engine.db.entities.Users;
-import static com.codemovers.scholar.engine.helper.Utilities.encryptPassword_md5;
-import com.codemovers.scholar.engine.helper.enums.StatusEnum;
-import com.codemovers.scholar.engine.helper.exceptions.BadRequestException;
+import com.kodeinc.bcn.api.v1.abstracts.AbstractService;
+import com.kodeinc.bcn.api.v1.accounts.entities.AuthenticationResponse;
+import com.kodeinc.bcn.db.controllers.UserProfileJpaController;
+import com.kodeinc.bcn.db.controllers.UserRoleJpaController;
+import com.kodeinc.bcn.db.controllers.UsersJpaController;
+import com.kodeinc.bcn.db.entities.Profile;
+import com.kodeinc.bcn.db.entities.Roles;
+import com.kodeinc.bcn.db.entities.UserProfile;
+import com.kodeinc.bcn.db.entities.UserRole;
+import com.kodeinc.bcn.db.entities.Users;
+import static com.kodeinc.bcn.helper.Utilities.encryptPassword_md5;
+import com.kodeinc.bcn.helper.enums.StatusEnum;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,12 +29,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Base64;
 import java.util.Collection;
+import javax.ws.rs.BadRequestException;
 
 /**
  *
  * @author MOver 11/19/2017
  */
-public class UserService extends AbstractService<_User, UserResponse> implements UserServiceInterface {
+public class UserService extends AbstractService<_User, UserResponse> {
 
     private static final Logger LOG = Logger.getLogger(UserService.class.getName());
 
@@ -62,35 +54,22 @@ public class UserService extends AbstractService<_User, UserResponse> implements
         return service;
     }
 
-    @Override
-    public UserResponse create(SchoolData data, _User entity, AuthenticationResponse authentication) throws BadRequestException, Exception {
+    public UserResponse create(_User entity, AuthenticationResponse authentication) throws BadRequestException, Exception {
         entity.validate();
         Users USER = getUser(entity);
 
         //todo: check to see if there is a user with this this username
-        List<Users> list = controller.findByUserName(USER.getUsername(), data);
+        List<Users> list = controller.findByUserName(USER.getUsername());
         if (!list.isEmpty()) {
             throw new BadRequestException("User with username " + USER.getUsername() + " exists in the system");
         }
 
-        Profile profile = null;
-        if (entity.getProfile() != null) {
-            profile = ProfileService.getInstance().populateEntity(entity.getProfile());
-            profile = ProfileService.getInstance().createProfile(profile, data);
-        }
-
-        if (entity.getStaff() != null) {
-            Staff staff = StaffService.getInstance().getStaff(profile, entity.getStaff(), authentication);
-            StaffService.getInstance().create(data, staff, authentication);
-        }
-
         System.out.println("USERS" + entity.toString());
 
-        USER = controller.create(USER, data);
+        USER = controller.create(USER);
 
-        AttachUserProfile(USER, profile, data);
-        AttachRoles(entity, data, USER);
-        return populateResponse(USER, true);
+        AttachRoles(entity, USER);
+        return null;
     }
 
     //todo: retrieve authentication 
@@ -101,14 +80,14 @@ public class UserService extends AbstractService<_User, UserResponse> implements
      * @return
      * @throws Exception
      */
-    @Override
-    public UserResponse getById(SchoolData schoolData, Integer Id) throws Exception {
+    public UserResponse getById(Integer Id) throws Exception {
 
-        Users _user = controller.findUser(Id, schoolData);
+        Users _user = controller.findUser(Id);
         if (_user == null) {
             throw new BadRequestException("USER DOES NOT EXIST");
         }
-        return populateResponse(_user, true);
+        return  null;
+//                populateResponse(_user, true);
 
     }
 
@@ -118,7 +97,6 @@ public class UserService extends AbstractService<_User, UserResponse> implements
      * @param Password
      * @return
      */
-    @Override
     public String convertToBasicAuth(String username, String Password) {
         String authString = username + ":" + Password;
         byte[] authEncBytes = Base64.getEncoder().encode(authString.getBytes());
@@ -134,8 +112,7 @@ public class UserService extends AbstractService<_User, UserResponse> implements
      * @return
      * @throws Exception
      */
-    @Override
-    public AuthenticationResponse validateAuthentication(SchoolData schoolData, String authentication) throws BadRequestException, Exception {
+    public AuthenticationResponse validateAuthentication(String authentication) throws BadRequestException, Exception {
         LOG.log(Level.INFO, "AUTHENTICATION STRING " + authentication);
         authentication = authentication.replace("Basic:", "");
         String usernamePassword = new String(Base64.getDecoder().decode(authentication));
@@ -148,7 +125,7 @@ public class UserService extends AbstractService<_User, UserResponse> implements
 
         Login login = getLogin(parts);
 
-        return login(schoolData, login, "LOGID");
+        return login(login, "LOGID");
 
     }
 
@@ -160,12 +137,10 @@ public class UserService extends AbstractService<_User, UserResponse> implements
      * @return
      * @throws Exception
      */
-    @Override
-    public AuthenticationResponse login(SchoolData tenantData, Login login, String logId) throws BadRequestException, Exception {
+    public AuthenticationResponse login(Login login, String logId) throws BadRequestException, Exception {
 
         AuthenticationResponse response = new AuthenticationResponse();
 
-        LOG.log(Level.INFO, "School Name {0} ", tenantData.getName());
         login.validate();
         try {
             LOG.log(Level.INFO, " School User Login ");
@@ -180,7 +155,7 @@ public class UserService extends AbstractService<_User, UserResponse> implements
 
                     password = encryptPassword_md5(password);
 
-                    Users users = controller.login(username, password, tenantData);
+                    Users users = controller.login(username, password);
 
                     if (users == null) {
                         throw new BadRequestException("INVALID USERNAME AND OR PASSWORD ");
@@ -188,7 +163,7 @@ public class UserService extends AbstractService<_User, UserResponse> implements
                         // createProfile response ::
                         authentication = convertToBasicAuth(login.getUsername(), login.getPassword());
 
-                        Set<Roles> roleslist = users.getUserRoles();
+                        Set<Roles> roleslist = null;
 
                         List<PermissionsResponse> permissionsResponses = new ArrayList<>();
 
@@ -227,14 +202,13 @@ public class UserService extends AbstractService<_User, UserResponse> implements
         return response;
     }
 
-    @Override
-    public List<UserResponse> list(SchoolData data, Integer ofset, Integer limit, AuthenticationResponse authentication) throws Exception {
+    public List<UserResponse> list(Integer ofset, Integer limit, AuthenticationResponse authentication) throws Exception {
 
-        List<Users> _users = controller.findUsers(ofset, limit, data);
+        List<Users> _users = controller.findUsers(ofset, limit);
         List<UserResponse> userResponses = new ArrayList<>();
         if (_users != null) {
             for (Users users : _users) {
-                UserResponse userResponse = populateResponse(users, false);
+                UserResponse userResponse = null;
                 userResponses.add(userResponse);
             }
         }
@@ -247,8 +221,8 @@ public class UserService extends AbstractService<_User, UserResponse> implements
      * @param tenantData
      * @param account_id
      */
-    public void deactivate(SchoolData schoolData, Integer account_id) throws Exception {
-        Users _user = controller.findUser(account_id, schoolData);
+    public void deactivate(Integer account_id) throws Exception {
+        Users _user = controller.findUser(account_id);
         if (_user == null) {
             throw new BadRequestException("USER DOES NOT EXIST");
 
@@ -257,8 +231,8 @@ public class UserService extends AbstractService<_User, UserResponse> implements
 
     }
 
-    public void activate(SchoolData schoolData, Integer account_id) throws Exception {
-        Users _user = controller.findUser(account_id, schoolData);
+    public void activate(Integer account_id) throws Exception {
+        Users _user = controller.findUser(account_id);
         if (_user == null) {
             throw new BadRequestException("USER DOES NOT EXIST");
 
@@ -267,27 +241,27 @@ public class UserService extends AbstractService<_User, UserResponse> implements
 
     }
 
-    public void AttachRoles(_User entity, SchoolData data, Users USER) throws Exception {
+    public void AttachRoles(_User entity, Users USER) throws Exception {
         UserRole userRole = new UserRole();
         String[] rs = entity.getRoles();
-        List<Roles> roleses = getRoles(rs, data);
+        List<Roles> roleses = getRoles(rs);
         Roles[] _roles = new Roles[roleses.size()];
 
         userRole.setUser(USER);
         if (roleses != null) {
             for (Roles r : roleses) {
                 userRole.setRole(r);
-                UserRoleJpaController.getInstance().create(userRole, data);
+                UserRoleJpaController.getInstance().create(userRole);
             }
         }
     }
 
-    public void AttachUserProfile(Users USER, Profile profile, SchoolData data) {
+    public void AttachUserProfile(Users USER, Profile profile) {
         UserProfile userProfile = new UserProfile();
         userProfile.setUser(USER);
         userProfile.setProfile(profile);
 
-        userProfile = UserProfileJpaController.getInstance().create(userProfile, data);
+        userProfile = UserProfileJpaController.getInstance().create(userProfile);
     }
 
     public Users getUser(_User entity) throws Exception {
@@ -304,11 +278,12 @@ public class UserService extends AbstractService<_User, UserResponse> implements
         return USER;
     }
 
-    public List<Roles> getRoles(String[] rs, SchoolData data) throws BadRequestException, Exception {
+    public List<Roles> getRoles(String[] rs) throws BadRequestException, Exception {
         List<Roles> roleses = new ArrayList<>();
         if (rs != null) {
             for (String rolename : rs) {
-                Roles _role = RolesService.getInstance().getRoleByName(data, rolename);
+                Roles _role = null;
+//                        RolesService.getInstance().getRoleByName( rolename);
                 if (_role != null) {
                     roleses.add(_role);
                 }
@@ -327,65 +302,6 @@ public class UserService extends AbstractService<_User, UserResponse> implements
         login.setUsername(username);
         login.setPassword(password);
         return login;
-    }
-
-    private UserResponse populateResponse(Users entity, boolean extended) throws Exception {
-
-        UserResponse response = new UserResponse();
-        response.setId(entity.getId().intValue());
-        response.setUsername(entity.getUsername());
-        if (entity.getDateCreated() != null) {
-            response.setDateCreated(entity.getDateCreated().getTime());
-        }
-        response.setStatus(entity.getStatus());
-        Set<Roles> roleSet = entity.getUserRoles();
-        List<RoleResponse> roleResponses = new ArrayList<>();
-        response.setRoles(roleResponses);
-
-        if (roleSet != null) {
-            for (Roles role : roleSet) {
-                roleResponses.add(RolesService.getInstance().populateResponse(role, false));
-            }
-        }
-        response.setRoles(roleResponses);
-
-        Set<Profile> userProfiles = entity.getUserProfiles();
-
-        if (userProfiles != null) {
-
-            for (Profile profile : userProfiles) {
-                Profile _profile = profile;
-                ProfileResponse personResponse = ProfileService.getInstance().populateResponse(_profile);
-                response.setProfile(personResponse);
-                break;
-            }
-
-        }
-
-        if (entity.getStaff() != null) {
-            response.setStaff(StaffService.getInstance().populateResponse(entity.getStaff()));
-        }
-
-        return response;
-    }
-
-    public RoleResponse[] getRolesResponse(Set<Roles> roleSet, boolean extended) {
-        //PersonResponse
-        RoleResponse[] roleResponses = null;
-        if (roleSet != null) {
-            String[] rsArray = new String[roleSet.size()];
-
-            List<RoleResponse> rrs = new ArrayList<>();
-            List<RoleResponse> rsList = new ArrayList<>();
-            roleSet.forEach((_role) -> {
-                rsList.add(RolesService.getInstance().populateResponse(_role, extended));
-            });
-
-            roleResponses = new RoleResponse[rsList.size()];
-
-        }
-
-        return roleResponses;
     }
 
 }
