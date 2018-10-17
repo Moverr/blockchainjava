@@ -1,0 +1,224 @@
+<div id="templates" style="display: none;">
+   <ul id="groupLoanClientTabItem">
+      <li><a href="#client###counter###" id="client###counter###-tab" data-toggle="tab">client###counter###</a></li>
+   </ul>
+   <div id="clientTabContentTemplate">
+      <div role="tabpanel" class="tab-pane fade generatedClientTab" id="client###counter###" aria-labelledby="client###counter###-tab">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="panel panel-default" id="clientGeneralPanel###counter###">
+                  <div class="panel-heading">General client information</div>
+                  <div class="panel-body">
+<!--                     <div class="col-sm-1"></div>-->
+                     <div class="col-sm-2">
+                        <div class="form-group"><img class="manImg" id="loanClientImageID" src="images/personPlaceholderNoText.png" height="188px" width="141px" style="padding-bottom:3px;" alt="pic"></div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="form-group">
+                           <label for="clientName###counter###" class="col-lg-4 control-label">Name</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="clientName###counter###" placeholder="Name" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="homeProvince###counter###" class="col-lg-4 control-label">Province</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="homeProvince###counter###" placeholder="Province" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="homeCity###counter###" class="col-lg-4 control-label">City</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="homeCity###counter###" placeholder="City" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="homeStreet###counter###" class="col-lg-4 control-label">Street</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="homeStreet###counter###" placeholder="Street" disabled="disabled"></div>
+                        </div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="form-group">
+                           <label for="maritalStatus###counter###" class="col-lg-4 control-label">Marital status</label>
+                           <div class="col-lg-8">
+                              <select class="form-control" id="maritalStatus###counter###" disabled="disabled">
+                                 <option value="SINGLE">single</option>
+                                 <option value="IN_A_RELATIONSHIP">in a relationship</option>
+                                 <option value="MARRIED">married</option>
+                                 <option value="SEPARATED">separated</option>
+                                 <option value="DIVORCED">divorced</option>
+                                 <option value="WIDOWED">widowed</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label for="numberOfChildren###counter###" class="col-lg-4 control-label">Own children</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="numberOfChildren###counter###" placeholder="Number of children" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="numberOfChildrenInHousehold###counter###" class="col-lg-4 control-label two-line">Children in household</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="numberOfChildrenInHousehold###counter###" placeholder="Number of children in household" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="livingArea###counter###" class="col-lg-4 control-label">Living area</label>
+                           <div class="col-lg-8">
+                              <select class="form-control" id="livingArea###counter###" disabled="disabled">
+                                 <option value="RURAL">rural</option>
+                                 <option value="SLUM">slum</option>
+                                 <option value="URBAN">urban</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-6">
+               <div class="panel panel-default selfEmploymentPanel" id="selfEmploymentPanel###counter###" style="height: 100%">
+                  <div class="panel-heading">Self employment</div>
+                  <div class="panel-body">
+                     <div class="col-lg-12">
+                        <p class="message">Not self employed</p>
+                        <div class="form-group">
+                           <label for="selfEmploymentType###counter###" class="col-lg-4 control-label">Type</label>
+                           <div class="col-lg-8">
+                              <select class="form-control" id="selfEmploymentType###counter###" disabled="disabled">
+                                 <option value="FARMER">farmer</option>
+                                 <option value="OTHER">other</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label for="selfEmploymentStartDate###counter###" class="col-lg-4 control-label">Start date</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="selfEmploymentStartDate###counter###" placeholder="Start date" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="selfEmploymentMonthlyIncome###counter###" class="col-lg-4 control-label">Monthly income</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="selfEmploymentMonthlyIncome###counter###" placeholder="Monthly income" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="selfEmploymentFormallyRegistered###counter###" class="col-lg-4 control-label">Formally registered</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="selfEmploymentFormallyRegistered###counter###" placeholder="Is formally registered" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="selfEmploymentNumberOfEmployees###counter###" class="col-lg-4 control-label">Employees</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="selfEmploymentNumberOfEmployees###counter###" placeholder="Number of employees" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group" id="farmer###counter###">
+                           <label for="selfEmploymentAgriculturalSector###counter###" class="col-lg-4 control-label">Agricultural sector</label>
+                           <div class="col-lg-8">
+                              <select class="form-control" id="selfEmploymentAgriculturalSector###counter###" disabled="disabled">
+                                 <option value="CROPS">crops</option>
+                                 <option value="SALES_TRADING">sales/trading</option>
+                                 <option value="FRUITS">fruits</option>
+                                 <option value="VEGETABLES">vegetables</option>
+                                 <option value="FOOD_PROCESSING">food processing</option>
+                                 <option value="LIVESTOCK_POULTRY">lifestock/poultry</option>
+                                 <option value="OTHER">other</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="form-group" id="non-farmer###counter###">
+                           <label for="selfEmploymentBusinessSector###counter###" class="col-lg-4 control-label">Business sector</label>
+                           <div class="col-lg-8">
+                              <select class="form-control" id="selfEmploymentBusinessSector###counter###" disabled="disabled">
+                                 <option value="ACCOMMODATION">accomodation</option>
+                                 <option value="AGRICULTURE">agriculture</option>
+                                 <option value="CONSTRUCTION">construction</option>
+                                 <option value="EDUCATION">education</option>
+                                 <option value="HEALTH">health</option>
+                                 <option value="RECREATION_PERSONAL">personal recreation</option>
+                                 <option value="TRADING">trading</option>
+                                 <option value="TRANSPORT">transport</option>
+                                 <option value="STORAGE">storage</option>
+                                 <option value="UTILITIES">utilities</option>
+                                 <option value="FINANCIAL">financial</option>
+                                 <option value="FISHING">fishing</option>
+                                 <option value="FOOD_PROCESSING">food processing</option>
+                                 <option value="FORESTRY">forestry</option>
+                                 <option value="INFORMATION_COMMUNICATION">information/communication</option>
+                                 <option value="MINING">mining</option>
+                                 <option value="REAL_ESTATE">real estate</option>
+                                 <option value="OTHERS">others</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label for="selfEmploymentProvince###counter###" class="col-lg-4 control-label">Province</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="selfEmploymentProvince###counter###" placeholder="Province" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="selfEmploymentCity###counter###" class="col-lg-4 control-label">City</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="selfEmploymentCity###counter###" placeholder="City" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="selfEmploymentStreet###counter###" class="col-lg-4 control-label">Street</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="selfEmploymentStreet###counter###" placeholder="Street" disabled="disabled"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <div class="panel panel-default employmentPanel" id="employmentPanel###counter###">
+                  <div class="panel-heading">Employment</div>
+                  <div class="panel-body">
+                     <div class="col-sm-12">
+                        <p class="message">Not employed</p>
+                        <div class="form-group">
+                           <label for="employmentStartDate###counter###" class="col-lg-4 control-label">Start date</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="employmentStartDate###counter###" placeholder="Start date" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="employmentMonthlyIncome###counter###" class="col-lg-4 control-label">Monthly income</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="employmentMonthlyIncome###counter###" placeholder="Monthly income" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="employmentFormallyRegistered###counter###" class="col-lg-4 control-label">Formally registered</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="employmentFormallyRegistered###counter###" placeholder="Is formally registered" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="employmentNumberOfEmployees###counter###" class="col-lg-4 control-label">Employees</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="employmentNumberOfEmployees###counter###" placeholder="Number of employees" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="employmentSector###counter###" class="col-lg-4 control-label">Business sector</label>
+                           <div class="col-lg-8">
+                              <select class="form-control" id="employmentSector###counter###" disabled="disabled">
+                                 <option value="ACCOMMODATION">accomodation</option>
+                                 <option value="AGRICULTURE">agriculture</option>
+                                 <option value="CONSTRUCTION">construction</option>
+                                 <option value="EDUCATION">education</option>
+                                 <option value="HEALTH">health</option>
+                                 <option value="RECREATION_PERSONAL">personal recreation</option>
+                                 <option value="TRADING">trading</option>
+                                 <option value="TRANSPORT">transport</option>
+                                 <option value="STORAGE">storage</option>
+                                 <option value="UTILITIES">utilities</option>
+                                 <option value="FINANCIAL">financial</option>
+                                 <option value="FISHING">fishing</option>
+                                 <option value="FOOD_PROCESSING">food processing</option>
+                                 <option value="FORESTRY">forestry</option>
+                                 <option value="INFORMATION_COMMUNICATION">information/communication</option>
+                                 <option value="MINING">mining</option>
+                                 <option value="REAL_ESTATE">real estate</option>
+                                 <option value="OTHERS">others</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label for="employmentProvince###counter###" class="col-lg-4 control-label">Province</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="employmentProvince###counter###" placeholder="Province" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="employmentCity###counter###" class="col-lg-4 control-label">City</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="employmentCity###counter###" placeholder="City" disabled="disabled"></div>
+                        </div>
+                        <div class="form-group">
+                           <label for="employmentStreet###counter###" class="col-lg-4 control-label">Street</label>
+                           <div class="col-lg-8"><input type="text" class="form-control" id="employmentStreet###counter###" placeholder="Street" disabled="disabled"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

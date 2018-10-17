@@ -1,0 +1,80 @@
+<div class="content" id="officeContainer">
+    <!-- Create Client -->
+    <div class="content" id="add_office_page">
+        <div class="modal"></div>
+        <div class="row " id="Cclient">
+            <form class="form-horizontal" id="createOffficeForm" novalidate>
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div id="officeFormPanelHeading" class="panel-heading">New Office</div>
+                        <div class="panel-body">
+                            <div class="col-lg-2">
+                            </div>
+                            <div class="col-lg-8">
+
+                                <!-- Office Parent  -->
+                                <div class="form-group inputGroupContainer">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            Parent
+                                        </div>
+                                        <select id="systemOffices" class="form-control"  required>
+
+                                        </select>
+                                    </div>
+                                    <p class="help-block"></p>
+                                </div>
+
+                                <!-- Office Name  --> 
+                                <div class="form-group inputGroupContainer">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            Office
+                                        </div>
+                                        <input type="text" data-type="string" minLength="4" id="officeName" class="form-control" placeholder="Office Name"   required   name="officeName" >
+                                    </div>
+                                    <p class="help-block"></p>
+                                </div>
+
+                                <!-- Opening Date   --> 
+                                <div class="form-group inputGroupContainer">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            Opening Date
+                                        </div>
+                                        <input type="text" data-type="date" class="form-control" id="office_date_opened" placeholder="Date Opened" required readonly="readonly"  autocomplete="off" style="background-color: white">
+                                    </div>
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- submit -->
+                <div class="col-sm-12" >
+                    <div class="panel-body" style="padding: 0px !important;">
+                        <button id="editOfficeButtom"  class="btn customSubmitButton pull-right" style="display: none">
+                            <i class="mdl-color-text--white material-icons" role="presentation">create</i>Edit
+                        </button>
+                        <button id="updateOfficeButtom" class="btn customSubmitButton pull-right" style="display: none">
+                            <i class="mdl-color-text--white material-icons" role="presentation">create</i>Update
+                        </button>
+                        <button id="createOfficeButtom" type="submit"  class="btn customSubmitButton  pull-right" value="Submit">
+                            <i class="mdl-color-text--white material-icons" role="presentation">create</i>Submit
+                        </button>
+                        <button id="back_to_offices" type="button" class="btn customCancelButton pull-right" value="Submit">
+                            <i class="mdl-color-text--white material-icons" role="presentation">cancel</i> Cancel
+                        </button>
+                        <button id="cancelOfficeEditButton" class="btn customCancelButton pull-right" style="display: none">
+                            <i class="mdl-color-text--white material-icons" role="presentation">cancel</i> Cancel
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

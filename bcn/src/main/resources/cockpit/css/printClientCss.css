@@ -1,0 +1,114 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+        Created on : May 31, 2017, 12:01:18 PM
+        Author     : Muyinza
+*/
+
+#printClientPanel {
+    width: 800px;
+}
+#printClientPanelHeading {
+    -webkit-print-color-adjust: exact !important;
+    background-color: #666666;
+    color: white;
+}
+#printClientPanelBody {
+    background-color: #f2f2f4;
+}
+#printClientImageDiv {
+    border-right: 5px solid white;
+    border-top: 5px solid white;
+    border-left:5px solid white;
+    border-bottom: 10px solid white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 5px solid white;
+    border-left: 5px solid white;
+}
+table tr td {
+    padding-bottom: .5em;
+}
+#printClientImage {
+
+}
+@media print {
+    #printClientPanel {
+        -webkit-print-color-adjust: exact !important;
+        background-color: #f2f2f4 !important;
+    }
+    table {
+        background-color: white !important;
+        width: 100%;
+        border-collapse: collapse !important;
+        border-top: 5px solid white !important;
+        border-left: 5px solid white !important;
+    }
+    #printClientPanelHeading {
+        background-color: #666666 !important;
+        color: white !important;
+    }
+    #printClientImageDiv {
+        border-right: 5px solid white !important;
+        border-top: 5px solid white !important;
+        border-left:5px solid white !important;
+        border-bottom: 10px solid white !important;
+        background-color: transparent !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }    
+    *, *:before, *:after {
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a, a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    a[href^="#"]:after, a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre, blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    thead {
+        display: table-header-group;
+    }
+    tr, img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2, h3 {
+        page-break-after: avoid;
+    }
+    select {
+        background: #fff !important;
+    }
+    .navbar {
+        display: none;
+    }
+    .btn> .caret, .dropup> .btn> .caret {
+        border-top-color: #000 !important;
+    }
+}

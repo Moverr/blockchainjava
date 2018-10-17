@@ -1,0 +1,56 @@
+<div class="content generalPanelForm" id="permission_role_assignment">
+    <!-- VIew Roles Information -->
+    <div class="row" id="manage_role_page">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span></span>
+                </div>
+                <div class="panel-body viewContentContainer" style="max-width: 1000px; height: 400px; overflow-y: scroll;">
+                    <div class="col-lg-12">
+                        <!-- Role Name  -->
+                        <div class="input-group">                            
+                            <div class="input-group-addon">Name</div>
+                            <input type="text" id="view_roleName" class="form-control"  readonly="readonly" placeholder="Role Name" name="roleName" disabled/>
+                        </div>
+                        <!-- Role Description   -->
+                        <div class="input-group">
+                            <div class="input-group-addon">Description</div>
+                            <textarea class="form-control" id="view_roleDescription" readonly="readonly"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="col-lg-3">
+                            <h4> Grouping </h4>
+                        </div>
+                        <div class="col-lg-9">
+                            <h4> Permissions </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="col-lg-3">
+                            <ul class="authorization_grouping" id="authorization_grouping" style="height: 350px; overflow-y: auto;"  >
+
+                            </ul>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="permissions_list_roles_assignment" style="height: 350px; overflow-y: auto;">
+                                <!-- Permission --> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body" style="padding: 0px;"> 
+                <button id="submit_permissions" type="button"  class="btn customSubmitButton pull-right" value="Submit" style="display: block; ">
+                    <i class="mdl-color-text--white material-icons" role="presentation">create</i>
+                    Submit
+                </button>
+                <button id="back_to_roles" type="button"  class="btn customCancelButton  pull-right" value="Submit" style="display: block;">
+                    <i class="mdl-color-text--white material-icons" role="presentation">cancel</i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

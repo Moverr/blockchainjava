@@ -1,0 +1,2108 @@
+/* #003300 */
+
+
+/* #006600 */
+
+
+/* #66cc00 */
+
+
+/* #f98100 */
+
+
+/* #333333 */
+
+
+/* #666666 */
+
+
+/* #999999 */
+
+
+/* #cccccc */
+
+
+/* #eeeeee */
+
+
+/* #000000 */
+
+
+/* #ffffff */
+
+
+/* #ff0000 */
+
+
+/* #338000 */
+
+
+/* #f5f5f5 */
+
+
+/* #66cc00 */
+
+.phoneCountryPickerListItem {
+	cursor: pointer;
+}
+.phoneCountryPickerListItem:hover {
+	background-color: #efeded;
+}
+.phoneCountryPickerList {
+	max-height: 150px;
+	overflow-y: scroll;
+}
+body {
+	/*    .awamoLinks {
+		  a {
+			  font-size: 30px;
+			  color: @Anthrazit;
+		  }
+	  }*/
+}
+body #login {
+	padding-top: 100px;
+}
+body #login .loginbox {
+	padding: 15px 20px 10px 20px;
+	border: solid 1px #cccccc;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	background-color: #fbfbfb;
+	box-shadow: 1px 2px 5px 0px #cccccc;
+}
+body #login .loginbox .profile-img {
+	width: 96px;
+	height: 96px;
+	margin: 0 auto 10px;
+	display: block;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+body #login .loginbox .login-logo {
+	margin: 0 auto 20px;
+	display: block;
+	width: 150px;
+}
+body #login .loginbox .message {
+	display: none;
+	text-align: center;
+	margin-top: 30px;
+}
+body #login .loginbox button:hover {
+	background-color: #cccccc;
+	border-color: #999999;
+	color: #ffffff;
+}
+body #login .loginbox button:active:hover {
+	background-color: #999999;
+	border-color: #666666;
+	color: #eeeeee;
+}
+body #login .loginbox .loginFormSubmitButtonText {
+    padding-top: 2px;
+	display: block;
+}
+body #login .loginbox .loginFormSubmitButtonImage {
+	display: none;
+	height: 24px;
+}
+body #login .loginbox div.forgotPasswordLink, body #login .loginbox div.backToLoginLink {
+	text-align: center;
+}
+body #login .loginbox div.forgotPasswordLink a, body #login .loginbox div.backToLoginLink a {
+	text-decoration: none;
+	color: #666666;
+}
+body #login .loginbox div.forgotPasswordLink a:hover, body #login .loginbox div.backToLoginLink a:hover {
+    color: #f98100;
+}
+body #login .loginbox #forgotPasswordRow {
+	display: none;
+}
+body #login .loginbox #updatePasswordRow {
+	display: none;
+}
+body #login .loginbox .awamoLinks {
+	margin: 20px -20px -10px -20px;
+	/*  background-color: #999999;*/
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	text-align: center;
+}
+body #login .loginbox .awamoLinks a {
+	font-size: 30px;
+	line-height: 30px;
+	color: #eeeeee;
+}
+body #login .loginbox .awamoLinks a span {
+	padding: 10px;
+}
+body #login .loginbox .awamoLinks a .glyphicons:before {
+	padding: 0;
+}
+html body {
+	/* ************************************************************************
+		   * top navigation                                                         *
+		   ************************************************************************ */
+	/* ************************************************************************
+		   * left navigation                                                        *
+		   ************************************************************************ */
+}
+html body .navbar.navbar-fixed-top {
+	background-color: #404040;
+	border: 0;
+	height: 70px;
+}
+html body .navbar.navbar-fixed-top .navbar-brand {
+	padding: 5px 10px;
+	height: 65px;
+	margin-left: 10px;
+}
+html body .navbar.navbar-fixed-top .navbar-brand img {
+	height: 100%;
+}
+html body .navbar.navbar-fixed-top ul.nav {
+	display: none;
+	height: 70px;
+}
+html body .navbar.navbar-fixed-top ul.nav li {
+	height: 70px;
+	background-color: #404040;
+}
+html body .navbar.navbar-fixed-top ul.nav li a {
+	height: 70px;
+	line-height: 70px;
+	color: #eeeeee;
+	padding: 0 0 0 10px;
+}
+html body .navbar.navbar-fixed-top ul.nav li a:active, html body .navbar.navbar-fixed-top ul.nav li a:hover, html body .navbar.navbar-fixed-top ul.nav li a:focus {
+	background-color: #696969;
+}
+html body .navbar.navbar-fixed-top ul.nav li a span {
+	font-size: 30px;
+	line-height: 70px;
+	height: 70px;
+}
+html body .navbar.navbar-fixed-top ul.dropdown-menu {
+	background-color: #404040;
+}
+html body .navbar.navbar-fixed-top .navbar-collapse.collapse.in, html body .navbar.navbar-fixed-top .navbar-collapse.collapsing {
+	background-color: #404040;
+}
+html body .sidebar {
+	display: none;
+	position: fixed;
+	top: 27px;
+	bottom: 0;
+	left: 0;
+	width: 320px;
+	z-index: 1000;
+	padding: 60px 0 0 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: none;
+	border-right: solid 1px #696969;
+	background-color: #404040;
+}
+html body .sidebar a {
+	padding-right: 0;
+	color: #666666;
+}
+html body .sidebar .nav-sidebar span.badge {
+    background-color: #f98100;
+	display: none;
+	margin-top: -4px;
+	margin-left: 10px;
+}
+html body .sidebar .nav-sidebar > li {
+	width: 100%;
+}
+html body .sidebar .nav-sidebar > li > a {
+	padding-left: 20px;
+	line-height: 28px;
+}
+html body .sidebar .nav-sidebar > li > a span.glyphicons {
+	margin-top: -1px;
+	margin-right: 0;
+}
+html body .sidebar .nav-sidebar .active > a, html body .sidebar .nav-sidebar .active > a:hover, html body .sidebar .nav-sidebar .active > a:focus {
+	/*  background-color: #696969;
+	  color: #696969;*/
+}
+html body .sidebar .nav-sidebar > li:hover, html body .sidebar .nav-sidebar > li:focus {
+	background-color: #696969;
+	color: #696969;
+}
+html body .sidebar .nav-sidebar > li > a:hover, html body .sidebar .nav-sidebar > li > a:focus {
+	background-color: #696969;
+	color: #696969;
+}
+html body .sidebar .nav-sidebar .active > a span.badge, html body .sidebar .nav-sidebar .active > a:hover span.badge, html body .sidebar .nav-sidebar .active > a:focus span.badge {
+	/*  background-color: #696969;
+	  color: #696969;*/
+}
+html body .sidebar .nav-sidebar .active > a {
+	background-color: #696969;
+	color: #696969;
+}
+html body .sidebar .nav-sidebar .parentitem.bold a {
+	font-weight: bold;
+}
+html body .sidebar .nav-sidebar .subitem {
+	height: 0;
+	max-height: 42px;
+}
+html body .sidebar .nav-sidebar .subitem a {
+	padding-left: 66px;
+	font-size: 14px;
+}
+html body .sidebar .nav-sidebar .separator {
+	border-bottom: solid 1px #dddddd;
+}
+html body .main #actionButtonContainer li a {
+	min-width: 150px;
+}
+@media (max-width: 991px) {
+	html body .sidebar {
+		position: static;
+		width: auto;
+		height: auto;
+	}
+}
+@media (max-width: 767px) {
+	html body .navbar.navbar-fixed-top .navbar-right {
+		margin-top: 0;
+	}
+	html body .navbar.navbar-fixed-top .navbar-right li.user {
+		display: none;
+	}
+	html body .navbar.navbar-fixed-top .navbar-right li.dropdown {
+		float: right;
+	}
+	html body .navbar.navbar-fixed-top .navbar-right li.dropdown a {
+		text-align: right;
+		padding-right: 20px;
+	}
+}
+html body .main #tableTotalSum {
+	clear: both;
+}
+
+/*html body .main #TransactionsAccountReportTypeForm,*/
+
+
+/*html body .main #SavingsAccountReportTypeForm,*/
+
+
+/*html body .main #loanReportTypeForm,*/
+
+html body .main #tableTotalSum {
+	display: block;
+	margin-bottom: 10px;
+}
+
+/*html body .main #TransactionsAccountReportTypeForm input,*/
+
+
+/*html body .main #SavingsAccountReportTypeForm input,*/
+
+
+/*html body .main #loanReportTypeForm input,*/
+
+html body .main #tableTotalSum input,
+/*html body .main #TransactionsAccountReportTypeForm p,*/
+
+
+/*html body .main #SavingsAccountReportTypeForm p,*/
+
+
+/*html body .main #loanReportTypeForm p,*/
+
+html body .main #tableTotalSum p,
+/*html body .main #TransactionsAccountReportTypeForm label,*/
+
+
+/*html body .main #SavingsAccountReportTypeForm label,*/
+
+
+/*html body .main #loanReportTypeForm label,*/
+
+html body .main #tableTotalSum label,
+/*html body .main #TransactionsAccountReportTypeForm select,*/
+
+
+/*html body .main #SavingsAccountReportTypeForm select,*/
+
+
+/*html body .main #loanReportTypeForm select,*/
+
+html body .main #tableTotalSum select {
+	height: 45px;
+	line-height: 45px;
+	font-size: 20px;
+	font-weight: bold;
+	width: 300px;
+	margin-bottom: 5px;
+}
+
+/*html body .main #TransactionsAccountReportTypeForm .genericReportTitle,*/
+
+
+/*html body .main #SavingsAccountReportTypeForm .genericReportTitle,*/
+
+
+/*html body .main #loanReportTypeForm .genericReportTitle,*/
+
+html body .main #tableTotalSum .genericReportTitle {
+	width: 200px;
+	float: left;
+}
+
+/*html body .main #TransactionsAccountReportTypeForm #transactionFilterHint,*/
+
+
+/*html body .main #SavingsAccountReportTypeForm #transactionFilterHint,*/
+
+
+/*html body .main #loanReportTypeForm #transactionFilterHint,*/
+
+html body .main #tableTotalSum #transactionFilterHint,
+/*html body .main #TransactionsAccountReportTypeForm #savingaccountFilterHint,*/
+
+
+/*html body .main #SavingsAccountReportTypeForm #savingaccountFilterHint,*/
+
+
+/*html body .main #loanReportTypeForm #savingaccountFilterHint,*/
+
+
+/*html body .main #tableTotalSum #savingaccountFilterHint,*/
+
+
+/*html body .main #TransactionsAccountReportTypeForm #loanFilterHint,*/
+
+
+/*html body .main #SavingsAccountReportTypeForm #loanFilterHint,*/
+
+
+/*html body .main #loanReportTypeForm #loanFilterHint,*/
+
+html body .main #tableTotalSum #loanFilterHint {
+	margin-left: 20px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px;
+	font-weight: normal;
+	float: none;
+}
+html body .main #TransactionsAccountReportTypeForm #loanReportTypeTotal, html body .main #SavingsAccountReportTypeForm #loanReportTypeTotal, html body .main #loanReportTypeForm #loanReportTypeTotal, html body .main #tableTotalSum #loanReportTypeTotal {
+	border: none;
+	background-color: transparent;
+}
+html body .main #emailLoanReportDiv {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+html body .main #emailLoanReportDiv input, html body .main #emailLoanReportDiv p, html body .main #emailLoanReportDiv label, html body .main #emailLoanReportDiv select {
+	height: 45px;
+	line-height: 45px;
+	font-size: 24px;
+	font-weight: bold;
+	width: 300px;
+	margin-bottom: 5px;
+}
+html body .main #emailLoanReportDiv .genericReportTitle {
+	width: 200px;
+	float: left;
+}
+html body .main #emailLoanReportDiv #loanFilterHint {
+	margin-left: 20px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px;
+	font-weight: normal;
+	float: none;
+}
+html body .main #emailLoanReportDiv #loanReportTypeTotal {
+	border: none;
+	background-color: transparent;
+}
+html body .main #defaultTableContainer.allLoansTable table tbody tr td:nth-child(1) {
+	width: 5%;
+}
+html body .main #defaultTableContainer.allLoansTable table tbody tr td:nth-child(2) {
+	width: 45%;
+}
+html body .main #defaultTableContainer.allLoansTable table tbody tr td:nth-child(3) {
+	width: 10%;
+	text-align: right;
+}
+html body .main #defaultTableContainer.allLoansTable table tbody tr td:nth-child(4) {
+	width: 10%;
+	text-align: right;
+}
+html body .main #defaultTableContainer.allLoansTable table tbody tr td:nth-child(5) {
+	width: 10%;
+}
+html body .main #defaultTableContainer.allLoansTable table tbody tr td:nth-child(6) {
+	width: 15%;
+}
+html body .main #defaultTableContainer.allLoansTable table tbody tr td:nth-child(7) {
+	width: 10%;
+}
+html body .main #loanContainer {
+	display: none;
+}
+html body .main #loanContainer button {}
+html body .main #loanContainer .row {
+	margin: 0 0 1px 0;
+}
+.panel-body {
+	max-width: 1000px;
+}
+html body .main #loanContainer #loan .panel-body {
+	padding-bottom: 0;
+	max-width: 1000px;
+}
+html body .main #loanContainer #loan .panel-body div {}
+html body .main #loanContainer #loan .panel-body div .form-group {
+	margin-left: 0;
+	margin-right: 0;
+}
+html body .main #loanContainer #loan .panel-body div .form-group.two-line {
+	overflow: visible;
+	height: 34px;
+}
+html body .main #loanContainer #loan form label {
+	padding-left: 0;
+}
+html body .main #loanContainer #loan form label.two-line {
+	padding-top: 0;
+}
+html body .main #loanContainer #loan form #loanTabs li a {
+	border: none;
+}
+html body .main #loanContainer #loan form #loanTabs li.active > a {
+	background-color: #77c66b;
+	color: #ffffff;
+	font-weight: bold;
+}
+html body .main #loanContainer #loan form #loanTabs li a {
+	color: #333333;
+}
+html body .main #loanContainer #loan form #clientGeneralPanel .panel-body > div:first-child {
+	padding-right: 30px;
+}
+html body .main #loanContainer #loan form #clientGeneralPanel .panel-body > div:last-child {
+	padding-left: 30px;
+}
+html body .main #loanContainer #loan form #loanTabContentList {
+	/*    padding-top: 20px;*/
+}
+html body .main #loanContainer #loan form #loanTabContentList > div > div.row > div:first-child {
+	padding-left: 0;
+}
+html body .main #loanContainer #loan form #loanTabContentList > div > div.row > div:last-child {
+	padding-right: 0;
+}
+html body .main #loanContainer #loan form #loanTabContentList .panel-heading {
+	font-weight: bold;
+}
+html body .main #loanContainer #loan form #loanTabContentList .homeAddressPanel, html body .main #loanContainer #loan form #loanTabContentList .guarantorPanel {
+	height: 210px;
+}
+html body .main #loanContainer #loan form #loanTabContentList .employmentPanel, html body .main #loanContainer #loan form #loanTabContentList .selfEmploymentPanel {
+	height: 500px;
+}
+html body .main #loanContainer #loan form #loanTabContentList #otherInformationPanel #rejectNoteGroup {
+	display: none;
+}
+html body .main #loanContainer #loanActions {
+	margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+	body .main #loanContainer #loanTabContentList > div > div.row > div:first-child {
+		padding-right: 0;
+	}
+	body .main #loanContainer #loanTabContentList > div > div.row > div:last-child {
+		padding-left: 0;
+	}
+	body .main #loanContainer #loanApplication #homeAddressPanel, body .main #loanContainer #loanApplication #guarantorPanel {
+		height: 280px;
+	}
+	body .main #loanContainer #loanApplication .panel-body > div {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	body .main #loanContainer #loanApplication .row > div {
+		padding: 0;
+	}
+	body .main .navbar-content li a {
+		margin-top: 15px;
+		margin-left: 0;
+	}
+}
+#dashboardArea .panel-body {
+	padding: 0;
+}
+#dashboardArea table {
+	border-collapse: separate;
+	border-spacing: 3px 10px;
+	margin-bottom: 0;
+	padding: 0 10px;
+}
+#dashboardArea table tr {
+	margin-bottom: 4px;
+}
+#dashboardArea table tr th, #dashboardArea table tr td {
+	text-align: right;
+	border: none;
+}
+#dashboardArea table tr td.image {
+	padding: 2px;
+	background-color: #eeeeee;
+	border: solid 1px #cccccc;
+	-webkit-border: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+#dashboardArea table tr td.prefix {
+	text-align: left;
+	padding-left: 10px;
+	background-color: #eeeeee;
+	color: #666666;
+	border: solid 1px #cccccc;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+#dashboardArea .row-0 .panel {
+	height: 325px;
+}
+#dashboardArea .row-0 .panel .panel-body {
+	height: 268px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+#dashboardArea #dashboardOverview tr td[colspan="4"] {
+	text-align: center;
+}
+#dashboardArea #dashboardProfile .panel-body {
+	padding-top: 20px;
+}
+#dashboardArea #dashboardProfile .panel-body img {
+	padding: 5px;
+	width: 100%;
+	margin-bottom: 0px;
+	max-width: 133px;
+	max-height: 166px;
+}
+#dashboardArea #dashboardAccount {
+	display: none;
+}
+#dashboardArea #dashboardAccount .panel-body {
+	padding: 20px 10px 0 10px;
+}
+#dashboardArea #dashboardInventory .panel {
+	height: 357px;
+}
+#dashboardArea #dashboardInventory .panel .panel-body {
+	padding: 20px 10px 0 10px;
+}
+#dashboardArea #dashboardNews {
+	position: relative;
+}
+#dashboardArea #dashboardNews .panel .panel-body iframe {
+	display: block !important;
+	margin: auto;
+}
+@media (max-width: 1199px) {
+	#dashboardArea .row-0 .panel {
+		height: auto;
+	}
+	#dashboardArea .row-0 .panel .panel-body {
+		height: auto;
+	}
+}
+html body .main #helpArea #profileArea {
+	margin: 0 0 15px 0;
+}
+html body .main #helpArea #profileArea .panel {
+	margin-bottom: 0;
+}
+html body .main #helpArea #profileArea .panel .panel-body {
+	padding-top: 20px;
+}
+html body .main #helpArea #profileArea .panel .panel-body img {
+	border: solid 1px #999999;
+	padding: 5px;
+	width: 100%;
+}
+html body .main #savingsAccount > div {
+	padding: 0;
+}
+html body .main #savingsAccount > div.balance {
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+html body .main #savingsAccount > div.balance .value {
+	padding-left: 25px;
+}
+html body .main #helpArea #accountArea {
+	margin: 0;
+}
+html body .main #helpArea #accountArea .panel {
+	margin-bottom: 0;
+}
+html body .main #helpArea #accountArea .panel .panel-body {
+	padding-top: 20px;
+}
+html body .main #accountingContainer #balanceSheetTableContainer table thead tr th:nth-child(1) {
+	width: 50%;
+}
+html body .main #accountingContainer #balanceSheetTableContainer table thead tr th:nth-child(2) {
+	width: 50%;
+}
+html body .main #accountingContainer #balanceSheetTableContainer table tbody tr td:nth-child(1) {
+	width: 50%;
+}
+html body .main #accountingContainer #balanceSheetTableContainer table tbody tr td:nth-child(2) {
+	width: 50%;
+}
+html body .main #accountingContainer #balanceSheetTableContainer table tbody tr.total {
+	background-color: #888888;
+	color: #eeeeee;
+}
+html body .main #accountingContainer #balanceSheetTableContainer table tbody tr.total:hover {
+	color: #333333;
+}
+html body .main #accountingContainer #balanceSheetTableContainer table tbody tr.totalSum {
+	background-color: #666666;
+	color: #eeeeee;
+}
+html body .main #accountingContainer #balanceSheetTableContainer table tbody tr.totalSum:hover {
+	color: #333333;
+}
+html body .main #accountingContainer #balanceSheetTableContainer table tbody tr.incomeStatementMainRow {
+	font-weight: bold;
+}
+html body .main #portfolioArea {
+	display: none;
+}
+html body .main #portfolioArea .panel-body {
+	height: 500px;
+}
+html body .main #portfolioArea .panel-body .chart {
+	height: 100%;
+}
+html body .main #portfolioArea .panel-body div.google-visualization-tooltip {
+	background-color: #ccc !important;
+}
+html body .main #portfolioArea .panel-body div.google-visualization-tooltip ul li span {
+	color: #fff !important;
+}
+html body .main #portfolioArea .panel-body .flotTip {
+	padding: 3px 5px;
+	background-color: #000;
+	z-index: 100;
+	color: #fff;
+	box-shadow: 0 0 10px #555;
+	opacity: .7;
+	filter: alpha(opacity=70);
+	border: 2px solid #fff;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+html body .main #geoInformationArea #geoInformationClient #geoInformationMap {
+	border: solid 1px #999999;
+	height: 700px;
+}
+#sharePurchaseDatePicker {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#shareSaleGroup {
+	display: none;
+}
+html {
+	height: 100%;
+	position: relative;
+	min-height: 100%;
+}
+html body .mdl-color-text--white {
+	color: #fff!important;
+	font-style: normal !important;
+	vertical-align: middle;
+}
+html caption {
+	display: block;
+}
+@font-face {
+	font-family: 'RobotoLight';
+	src: url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'RobotoRegular';
+	src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'RobotoMedium';
+	src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+}
+html body {
+	height: 100%;
+	padding-top: 50px;
+	font-family: 'RobotoRegular';
+	font-size: 14px;
+}
+html body #datesSelectorLoanEndDate, html body #datesSelectorPaymentDue, html body #datesSelectorTransaction {
+	display: flex;
+}
+html body #aboutLink {
+	font-size: 20px;
+}
+html body #aboutLink a {
+    color: #f98100;
+}
+html body div.container-fluid {
+	height: 100%;
+}
+html body div.container-fluid div.row {
+	height: 100%;
+}
+html body .content {
+	display: none;
+}
+html body label {
+	font-weight: normal;
+}
+html body .panel-default {
+	max-width: 1000px !important;
+}
+html body .panel-body {
+	max-width: 1000px !important;
+}
+html body .panel-heading {
+	max-width: 1000px !important;
+	background-color: #666666;
+	color: white;
+}
+html body .panel-default .panel-heading {
+	background-color: #666666;
+	color: white;
+	height: 55px;
+	line-height: 35px;
+	font-size: 18px;
+	padding-left: 20px;
+}
+html body .panel-default .panel-heading span.glyphicons {
+	font-size: 20px;
+	margin-top: -7px;
+	margin-right: 10px;
+}
+html body .imageframe {
+	position: relative;
+}
+html body .imageframe img {
+	/* height: 200px;
+	width: auto; */
+	width: 100%;
+	height: 200px;
+	display: block;
+	margin: auto;
+}
+html body .btn-primary {
+	outline: none;
+	outline-color: transparent !important;
+	background-color: #eeeeee;
+	border-color: #cccccc;
+	color: #333333;
+}
+html body .customCancelButton {
+	outline: none;
+	outline-color: transparent !important;
+	background-color: #666666;
+	border-color: #cccccc;
+	color: white;
+	font-size: 14px;
+	width: 150px;
+	height: 35px;
+	text-align: center;
+	padding: 5px 10px 10px 10px;
+	vertical-align: center;
+	font-weight: bold;
+	margin-left: 5px;
+}
+html body .btn-primary:active, html body .btn-primary:focus {
+	background-color: #eeeeee;
+	border-color: #cccccc;
+	color: #333333;
+}
+html body .customCancelButton:active, html body .customCancelButton:focus {
+	background-color: #666666;
+	border-color: #cccccc;
+	color: #e2e0e0;
+}
+html body .btn-primary:hover {
+	background-color: #666666;
+	border-color: #999999;
+	color: #eeeeee;
+}
+html body .customCancelButton:hover {
+	background-color: #828282;
+	border-color: #999999;
+	color: #eeeeee;
+}
+html body .btn-primary:active:hover {
+	background-color: #999999;
+	border-color: #666666;
+	color: #eeeeee;
+}
+html body .customCancelButton:active:hover {
+	background-color: #a5a5a5;
+	border-color: #666666;
+	color: #eeeeee;
+}
+html body .btn-primary.default {
+	background-color: #ffc266;
+	color: #333333;
+	border-color: #ffc266;
+}
+html body .customSubmitButton {
+    background-color: #f98100;
+    border-color: #f98100;
+	color: white;
+	font-size: 14px;
+	width: 150px;
+	height: 35px;
+	text-align: center;
+	padding: 5px 10px 10px 10px;
+	vertical-align: center;
+	font-weight: bold;
+	margin-left: 5px;
+}
+html body .btn-primary.default:active, html body .btn-primary.default:focus {
+	/*                    background-color: @Very-Light-Grey;
+										  border-color: @Light-Grey;
+										  color: @Very-Dark-Grey;*/
+}
+html body .btn-primary.default:active:hover, html body .btn-primary.default:hover {
+    background-color: #f98100;
+    border-color: #f98100;
+	color: #eeeeee;
+}
+html body .customSubmitButton:active:hover, html body .customSubmitButton:hover {
+	background-color: #ffc266;
+	color: #eeeeee;
+	border-color: #ffc266;
+}
+html body table tbody tr {
+	cursor: pointer;
+}
+html body table tbody tr:hover {
+	background-color: rgba(179, 230, 128, 0.7)/*rgba(102, 204, 0, 0.2)*/
+		!important;
+}
+html body table tbody tr td.percentage, html body table tbody tr td.currency {
+	text-align: right;
+}
+html body table.tablesorter-bootstrap tbody tr.even:hover td, html body table.tablesorter-bootstrap tbody tr.odd:hover td {
+	background-color: transparent;
+}
+html body .main {
+	display: none;
+	padding: 1px 20px 20px 360px;
+	margin-top: 35px;
+	float: right;
+	overflow: hidden;
+}
+html body .main h3 {
+	font-family: 'RobotoMedium';
+	font-size: 28px;
+}
+html body .main h3, html body .main h4 {
+	border: none;
+}
+html body .main .sub-header {
+	padding-bottom: 10px;
+}
+html body .main .page-header {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+html body .main .navbar-content {
+	margin-right: 1px;
+	background-color: transparent;
+	border-radius: 0;
+}
+html body .main .navbar-content li a {
+	margin-left: 20px;
+}
+html body .main .navbar-left li a {
+	margin-right: 20px;
+}
+html body .main #defaultTableContainer {
+	margin-bottom: 20px;
+	max-width: 1000px;
+	overflow-y: hidden;
+}
+html body .main #defaultTableContainer #tableMessage {
+	display: none;
+}
+html body .standardTable {
+	display: none;
+}
+html body .standardTable thead th {
+	background-color: #666666;
+	color: #eeeeee;
+	/*    height: 55px;
+		line-height: 35px;*/
+	font-size: 18px;
+	padding-left: 16px;
+	white-space: nowrap;
+}
+html body .standardTable thead th span.glyphicons {
+	font-size: 20px;
+	margin-top: -7px;
+	margin-right: 10px;
+}
+html body .standardTable thead th tr:hover {
+	cursor: pointer;
+}
+html body footer {
+	left: 0;
+	position: fixed;
+	bottom: 0px;
+	width: 320px;
+	height: 30px;
+	padding: 0 0 0 10px;
+	margin: 0;
+	line-height: 15px;
+	color: #666666;
+	background-color: #f5f5f5;
+	z-index: 2000;
+}
+html body footer p {
+	margin: 0;
+}
+html body .footerButtons {
+	background: rgb(165, 165, 165);
+	/* Fall-back for browsers that don't
+									support rgba */
+	background: rgba(165, 165, 165);
+	height: 40px;
+	position: fixed;
+	bottom: 0px;
+	left: 320px;
+	width: 100%;
+}
+@media (max-width: 991px) {
+	html body .main {
+		padding: 20px 20px 20px 20px;
+	}
+}
+@media (max-width: 767px) {
+	html body .main {
+		padding: 0;
+	}
+}
+
+/*# sourceMappingURL=cockpit.css.map */
+
+
+/* Let's get this party started */
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #999999;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255, 0, 0, 0.4);
+}
+::-webkit-scrollbar {
+	background: transparent;
+	overflow: visible;
+	width: 17px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.2);
+	border: solid #fff;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.8);
+}
+::-webkit-scrollbar-thumb:horizontal {
+	border-width: 4px 6px;
+	min-width: 40px;
+}
+::-webkit-scrollbar-thumb:vertical {
+	border-width: 6px 4px;
+	min-height: 40px;
+}
+::-webkit-scrollbar-track-piece {
+	background-color: #fff;
+}
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #ADADAD;
+	-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.10), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #999;
+}
+.modal-header-awamo {
+	color: #fff;
+	padding: 9px 15px;
+	border-bottom: 1px solid #eee;
+	background-color: #404040;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.modal-header-success {
+	color: #fff;
+	padding: 9px 15px;
+	border-bottom: 1px solid #81D251;
+	background-color: #5cb85c;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.modal-header-warning {
+	color: #fff;
+	padding: 9px 15px;
+	border-bottom: 1px solid #E4C340;
+	background-color: #f0ad4e;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.modal-header-danger {
+	color: #fff;
+	padding: 9px 15px;
+	border-bottom: 1px solid #FF7F7C;
+	background-color: #d9534f;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.modal-header-info {
+	color: #fff;
+	padding: 9px 15px;
+	border-bottom: 1px solid #6CC6FB;
+	background-color: #5bc0de;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.modal-header-primary {
+	color: #fff;
+	padding: 9px 15px;
+	border-bottom: 1px solid #eee;
+	background-color: #428bca;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.pagemessage {
+	-webkit-font-smoothing: antialiased;
+	padding: 10px 30px 10px 30px;
+	font-size: 15px;
+	/*  color:#000;*/
+	font-weight: bold;
+	-webkit-box-shadow: 0px 2px 8px #999;
+	-moz-box-shadow: 0px 2px 8px #999;
+	box-shadow: 0px 2px 8px #999;
+	position: fixed;
+	top: 0px;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	/*  background-color: #FFE79B;*/
+	max-width: 70%;
+	text-align: center;
+	z-index: 1500;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+}
+.pagemessage table td {
+	-webkit-font-smoothing: antialiased;
+	font-size: 15px;
+	text-align: center;
+}
+.authorization_grouping {}
+.authorization_grouping li {
+	list-style: none;
+	padding: 5px;
+}
+.authorization_grouping li a {
+	font-size: 14px;
+	text-decoration: none;
+	color: #999;
+}
+.active_list_selection {
+	border-bottom: 1px solid #FFE79B;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.no-link-style a:hover, no-link-style a:focus {
+	color: #23527c;
+	text-decoration: none;
+}
+
+/* .no-link-style a:hover, no-link-style a:focus {
+	 color: #23527c;
+	 text-decoration: none; 
+}*/
+span.no-link-style {
+	color: rgb(255, 153, 0);
+}
+span.no-link-style:hover, span.no-link-style:focus {
+	color: #ffc266;
+}
+
+a.no-link-style {
+	color: rgb(255, 153, 0);
+	font-size: 5em;
+	line-height: 0;
+	text-decoration: none;
+}
+a.no-link-style:hover, a.no-link-style:focus {
+	color: #ffc266;
+	font-size: 6em;
+	line-height: 0;
+}
+groupContainer .table {
+	text-align: right;
+}
+.loader {
+	-webkit-user-select: none;
+	/* Chrome all / Safari all */
+	-moz-user-select: none;
+	/* Firefox all */
+	-ms-user-select: none;
+	/* IE 10+ */
+	/* with no content, nothing is rendered */
+	content: "";
+	position: fixed;
+	/* element stretched to cover during rotation an aspect ratio up to 1/10 */
+	top: -500%;
+	left: -500%;
+	right: -500%;
+	bottom: -500%;
+	z-index: 9999;
+	pointer-events: none;
+	/* to block content use: all */
+	/* background */
+	background-color: rgba(0, 0, 0, 0.6);
+	background-image: url(data:image/png;base64,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);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100px 100px;
+	/* animation */
+	-webkit-animation-name: linearRotate;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: linearRotate;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	-o-animation-name: linearRotate;
+	-o-animation-duration: 1s;
+	-o-animation-iteration-count: infinite;
+	-o-animation-timing-function: linear;
+	animation-name: linearRotate;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+.mainBodyWidthDiv {
+	width: 1000px;
+}
+@-webkit-keyframes linearRotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+.customToolTip + .tooltip > .tooltip-inner {
+	background-color: #404040;
+}
+.customToolTip + .tooltip > .tooltip-arrow {
+	border-bottom-color: #404040;
+}
+button.more-collateral {
+	display: inline-block!important;
+	margin-right: 0px !important;
+	margin-right: 0px!important;
+	font-size: 8px!important;
+	width: 50px!important;
+	height: 50px!important;
+}
+a.more-collateral, a.less-collateral {
+	margin-top: 13.0em;
+	color: #ffc266;
+	float: right;
+}
+a.more-collateral:hover, a.more-collateral:focus, a.less-collateral:hover, a.less-collateral:focus {
+	color: rgba(255, 194, 97, 0.75);
+}
+.more-collateral i, .less-collateral i {
+	font-size: 2.8em;
+}
+@media(min-width:615px) {
+	a.more-collateral, a.less-collateral {
+		margin-top: 2.0em;
+	}
+}
+@media(max-width:614px) {
+	a.more-collateral, a.less-collateral {
+		margin-top: 0.0em;
+	}
+}
+@media(max-width:490px) {
+	a.more-collateral, a.less-collateral {
+		margin-top: 0.0em;
+	}
+}
+
+/*
+@media(min-width:992px){
+	
+}
+@media(min-width:1200px){
+	
+}*/
+
+.buttonContainer {
+	padding: 0px;
+	max-height: 1000px;
+}
+.manImg .img-responsive {
+	max-width: 100%;
+	padding-right: 2em;
+	max-height: 100%;
+}
+
+/*.dataTables_filter { visibility: hidden;}*/
+
+table.dataTable tbody td {
+	padding: 10px 10px;
+}
+.search-query {
+	height: 30px;
+	color: #333;
+	font-size: 16px;
+	height: 32px;
+	text-indent: 10px;
+	outline: medium none;
+	width: 300px;
+	display: none !important;
+}
+.dataTables_filter input[type="search"] {
+	position: static;
+}
+table.dataTable {
+	margin: 0 0 !important;
+	/* width:100% !important; */
+}
+
+.table-fixed thead {
+	width: 100%;
+}
+.table-fixed tbody {
+	height: 230px;
+	overflow-y: auto;
+	width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+	display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+	float: left;
+	border-bottom-width: 0;
+}
+div.dataTables_wrapper {
+	margin: 0 auto;
+}
+.dataTable {
+	min-width: 100%;
+	margin: 0 auto;
+	border-collapse: collapse !important;
+}
+.table-bordered {
+	/*border:none !important;*/
+	border-collapse: collapse !important;
+}
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+	border: none !important;
+	border-collapse: collapse !important;
+}
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	font-size: 10px !important;
+	font-weight: normal !important;
+	text-align: center;
+}
+::-moz-placeholder {
+	font-size: 10px !important;
+	font-weight: normal !important;
+	text-align: center;
+}
+:-ms-input-placeholder {
+	font-size: 10px !important;
+	font-weight: normal !important;
+	text-align: center;
+}
+:-moz-placeholder {
+	font-size: 10px !important;
+	font-weight: normal !important;
+	text-align: center;
+}
+#defaultTableContainer thead input[type="text"] {
+	border-collapse: collapse !important;
+	border-bottom: 1px #ddd solid;
+}
+.dataTables_filter {
+	display: none !important;
+}
+.table>thead>tr>th {
+	vertical-align: middle !important;
+	border-collapse: collapse !important;
+}
+.viewContentContainer {
+	max-width: 1000px;
+	height: 450px;
+	/*    overflow-y: scroll;
+		overflow-x: scroll;*/
+}
+.loanClientData {
+	max-width: 1000px;
+	height: 450px;
+	overflow-y: scroll;
+}
+#helpOverview .panel-body {
+	padding-top: 20px;
+}
+#helpOverview .panel-body img {
+	padding: 5px;
+	width: 100%;
+	margin-bottom: 0px;
+	max-width: 133px;
+	max-height: 166px;
+}
+.generalPanelForm .panel-body {
+	padding-top: 20px;
+}
+.generalPanelForm .panel-body img {
+	padding: 5px;
+	width: 100%;
+	margin-bottom: 0px;
+	max-width: 133px;
+	max-height: 166px;
+}
+.inputGroupContainer {
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+	margin-bottom: 0px !important;
+}
+.ext {
+	min-width: auto!important;
+}
+.panel-body input[type="number"] {
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+}
+.form-control[disabled], fieldset[disabled] .form-control {
+	background-color: rgba(217, 217, 217, 0.25);
+}
+.table-responsive {
+	overflow-x: inherit!important;
+}
+html body .panel-heading .customCancelButton {
+	/*background-color: #333;*/
+	border-color: #828282;
+}
+html body .panel-heading .customCancelButton:hover {
+	/*background-color: #333;*/
+	border-color: #a5a2a2;
+}
+body {
+	background-color: rgb(231, 230, 230)/*#e7e6e6;*/
+}
+html body .main #loanContainer #loan form #loanTabs li.active > a {
+	/*background-color: #b2e580;*/
+	color: rgba(64, 64, 64, 1);
+	background-color: rgba(167, 217, 115, 1);
+}
+html body .mdl-color-text--white {
+	color: rgba(238, 238, 238, 0.94)!important;
+}
+table#defaultDataTable table {
+	border: 1px solid rgba(191, 191, 191) !important;
+	background-color: #ffffff!important;
+}
+table#defaultDataTable tbody {
+	background-color: #ffffff!important;
+}
+#groupContainer .form-control[disabled], fieldset[disabled] .form-control {
+	background-color: rgba(217, 217, 217, 0.25);
+}
+div.dt-buttons {
+	position: fixed!important;
+	float: right!important;
+	bottom: -0.5em;
+	/*left: 1em;*/
+	z-index: 10000;
+	/*    background-color: #333;
+		color:#ffffff;*/
+}
+html body .footerButtons {
+	display: none;
+}
+.breadcrumb-arrow {
+	height: 36px;
+	padding: 0;
+	line-height: 36px;
+	list-style: none;
+	background-color: #e6e9ed
+}
+.breadcrumb-arrow li:first-child a {
+	border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	-moz-border-radius: 4px 0 0 4px
+}
+.breadcrumb-arrow li, .breadcrumb-arrow li a, .breadcrumb-arrow li span {
+	display: inline-block;
+	vertical-align: top
+}
+.breadcrumb-arrow li:not(:first-child) {
+	margin-left: -5px
+}
+.breadcrumb-arrow li+li:before {
+	padding: 0;
+	content: ""
+}
+.breadcrumb-arrow li span {
+	padding: 0 10px
+}
+.breadcrumb-arrow li a, .breadcrumb-arrow li:not(:first-child) span {
+	height: 36px;
+	padding: 0 10px 0 25px;
+	line-height: 36px
+}
+.breadcrumb-arrow li:first-child a {
+	padding: 0 10px
+}
+.breadcrumb-arrow li a {
+	position: relative;
+	color: #fff;
+	text-decoration: none;
+	background-color: #3bafda;
+	border: 1px solid #3bafda
+}
+.breadcrumb-arrow li:first-child a {
+	padding-left: 10px
+}
+.breadcrumb-arrow li a:after, .breadcrumb-arrow li a:before {
+	position: absolute;
+	top: -1px;
+	width: 0;
+	height: 0;
+	content: '';
+	border-top: 18px solid transparent;
+	border-bottom: 18px solid transparent
+}
+.breadcrumb-arrow li a:before {
+	right: -10px;
+	z-index: 3;
+	border-left-color: #3bafda;
+	border-left-style: solid;
+	border-left-width: 11px
+}
+.breadcrumb-arrow li a:after {
+	right: -11px;
+	z-index: 2;
+	border-left: 11px solid #2494be
+}
+.breadcrumb-arrow li a:focus, .breadcrumb-arrow li a:hover {
+	background-color: #4fc1e9;
+	border: 1px solid #4fc1e9
+}
+.breadcrumb-arrow li a:focus:before, .breadcrumb-arrow li a:hover:before {
+	border-left-color: #4fc1e9
+}
+.breadcrumb-arrow li a:active {
+	background-color: #2494be;
+	border: 1px solid #2494be
+}
+.breadcrumb-arrow li a:active:after, .breadcrumb-arrow li a:active:before {
+	border-left-color: #2494be
+}
+.breadcrumb-arrow li span {
+	color: #434a54
+}
+#accountingContainer {
+	max-width: 1000px
+}
+.dataTables_scrollBody {
+	max-height: 300px;
+}
+.site-content-title {
+	background: #e9e9e9;
+	overflow: hidden;
+}
+.content-title-main {
+	padding-left: 20px;
+	line-height: 60px;
+	font-weight: 500;
+	font-size: 24px;
+}
+.breadcrumb {
+	background: 0 0;
+	padding: 9px 1rem;
+	margin: 0;
+}
+.breadcrumb li {
+	padding-left: 0;
+}
+
+/* Google Charts Responsiveness*/
+
+.chart {
+	width: 100%;
+	min-height: 150px;
+}
+.expired {
+	color: red !important;
+}
+#groupMembersTableContainer {
+	margin-top: -1.9em;
+}
+#groupNotication i {
+	vertical-align: middle;
+	font-size: 34px;
+	margin-right: 0.25em;
+}
+#groupNotication {
+	color: #FFFFFF;
+	background-color: #6bc6fb;
+	border-color: #03a2ff;
+}
+#groupNotication button {
+	color: #FFFFFF;
+}
+.progress-bar {
+	background-color: #006600;
+}
+.idTableColumn {
+	/*    width: 10%;*/
+}
+._sex {
+	/*    width: 5% !important;*/
+}
+._IconColumn{
+	text-align: center;
+}
+._tableImage input[type="text"] {
+	display: none !important;
+}
+._tableImage {
+	text-align: center;
+	/*    width: 5%;*/
+}
+.numOfMembers{
+	text-align: center;
+}
+.mCS-my-theme.mCSB_scrollTools {
+	background-color: #dbd9d9
+}
+.mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background-color: #adadad;
+	width: 10px;
+}
+.mCS-my-theme.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+	background-color: #999;
+}
+.mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail {
+	background-color: #dbd9d9;
+	width: 10px;
+}
+.mCS-my-theme.mCSB_scrollTools .mCSB_buttonUp, .mCS-my-theme.mCSB_scrollTools .mCSB_buttonDown {
+	background-color: #dbd9d9;
+}
+.mCS-my-theme.mCSB_scrollTools .mCSB_buttonUp:hover, .mCS-my-theme.mCSB_scrollTools .mCSB_buttonDown:hover {
+	background-color: #999;
+}
+.mCSB_container_wrapper>.mCSB_container {
+	padding-right: 0 !important;
+}
+.mCSB_container_wrapper {
+	margin-right: 1px !important;
+}
+.successMsgBckGround {
+	background-color: #81D251;
+}
+.warningMsgBckGround {
+	background-color: #E4C340;
+}
+.infoMsgBckGround {
+	background-color: #6CC6FB;
+}
+.dangerMsgBckGround {
+	background-color: #FF7F7C;
+}
+.panel-body {
+	position: relative;
+}
+.panel-action-btn {
+	float: none;
+	clear: both;
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+}
+.panel-action-btn ul {
+	margin: 0;
+	padding: 0;
+}
+.panel-action-btn li {
+	list-style: none;
+	transition: margin-left .3s;
+	float: right;
+	margin-left: -35px;
+}
+.panel-action-btn ul:hover li {
+	margin-left: 5px;
+}
+.panel-action-btn li div, .panel-action-btn div i {
+	display: block;
+	width: 35px;
+	height: 35px;
+}
+.panel-action-btn li div {
+	background-color: #666 !important;
+	color: #fff;
+	border-radius: 3px;
+	text-decoration: none;
+	cursor: pointer;
+}
+.panel-action-btn li div:hover {
+	background-color: #828282 !important;
+	text-decoration: none;
+}
+.panel-action-btn div i {
+	line-height: 35px;
+	text-align: center;
+}
+#network-status {
+	z-index: 9999;
+	position: fixed;
+	line-height: 40px;
+	background-color: #6bc6fb;
+	color: #fff;
+	border-radius: 3px;
+	padding: 0 30px 0 45px;
+	bottom: 15px;
+	right: 15px;
+	background-image: url("../img/ic_signal_cellular_connected_no_internet_4_bar_black_48px.svg");
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: 5px 3px;
+	cursor: pointer;
+	border: 1px solid #03a2ff;
+	display:none;
+}
+#network-status .dismiss {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	border: 1px solid #fff;
+	font-size: 10px;
+	line-height: 10px;
+	text-align: center;
+}
+
+.text-align-center{
+	text-align: center;
+}
+
+.blockUI.blockMsg.blockPage{
+	padding: 20px !important;
+	text-align: center;
+	border: none !important;
+	border-radius: 10px;
+	box-shadow: 0 0 5px #000;
+}
+#progressbar {
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 10px 0 0 !important;
+}
+.progress {
+	position: relative;
+}
+.progress .progress-failure, .progress .progress-bar-text {
+	position: absolute;
+	top: 0;
+}
+.progress-bar.progress-bar-text {
+	left: 0;
+	z-index: 9999;
+	background-color: transparent;
+}
+.progress .progress-failure {
+	background-color: #f00;
+	display: block;
+	height: 100%;
+}
+
+html body .main #defaultTableContainer table.editGroupTable tbody tr td:nth-child(1) {
+    width: 50% !important;
+}
+html body .main #defaultTableContainer table.editGroupTable tbody tr td:nth-child(2) {
+    width: 20% !important;
+}
+html body .main #defaultTableContainer table.editGroupTable tbody tr td:nth-child(3) {
+    width: 30% !important;
+}
+html body .main #defaultTableContainer table.manageClientsTable tbody tr td:nth-child(1) {
+	width: 20% !important;
+}
+html body .main #defaultTableContainer table.manageClientsTable tbody tr td:nth-child(2) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.manageClientsTable tbody tr td:nth-child(3) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.manageClientsTable tbody tr td:nth-child(4) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.manageClientsTable tbody tr td:nth-child(5) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.manageClientsTable tbody tr td:nth-child(6) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.manageClientsTable tbody tr td:nth-child(7) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredLoansTable tbody tr td:nth-child(1) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredLoansTable tbody tr td:nth-child(2) {
+	width: 25% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredLoansTable tbody tr td:nth-child(3) {
+	width: 25% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredLoansTable tbody tr td:nth-child(4) {
+	width: 9% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredLoansTable tbody tr td:nth-child(5) {
+	width: 30% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredLoansTable tbody tr td:nth-child(6) {
+	width: 6% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredSavingsAcTable tbody tr td:nth-child(1) {
+	width: 30% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredSavingsAcTable tbody tr td:nth-child(2) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredSavingsAcTable tbody tr td:nth-child(3) {
+	width: 20% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredSavingsAcTable tbody tr td:nth-child(4) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredSavingsAcTable tbody tr td:nth-child(5) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.actionRequiredSavingsAcTable tbody tr td:nth-child(6) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcClientsTable tbody tr td:nth-child(1) {
+	width: 45% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcClientsTable tbody tr td:nth-child(2) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcClientsTable tbody tr td:nth-child(3) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcClientsTable tbody tr td:nth-child(4) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcClientsTable tbody tr td:nth-child(5) {
+	width: 25% !important;
+}
+html body .main #defaultTableContainer table.collectRepaymentsTable tbody tr td:nth-child(1) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.collectRepaymentsTable tbody tr td:nth-child(2) {
+	width: 25% !important;
+}
+html body .main #defaultTableContainer table.collectRepaymentsTable tbody tr td:nth-child(3) {
+	width: 20% !important;
+}
+html body .main #defaultTableContainer table.collectRepaymentsTable tbody tr td:nth-child(4) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.collectRepaymentsTable tbody tr td:nth-child(5) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.collectRepaymentsTable tbody tr td:nth-child(6) {
+	width: 20% !important;
+}
+html body .main #defaultTableContainer table.collectRepaymentsTable tbody tr td:nth-child(7) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcTable tbody tr td:nth-child(1) {
+	width: 35% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcTable tbody tr td:nth-child(2) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcTable tbody tr td:nth-child(3) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcTable tbody tr td:nth-child(4) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.bankingSvcsSavingsAcTable tbody tr td:nth-child(5) {
+	width: 30% !important;
+}
+/* html body .main #defaultTableContainer table.reportingClientsTable tbody tr td:nth-child(1) {
+	width: 20% !important;
+}
+html body .main #defaultTableContainer table.reportingClientsTable tbody tr td:nth-child(2) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingClientsTable tbody tr td:nth-child(3) {
+	width: 7% !important;
+}
+html body .main #defaultTableContainer table.reportingClientsTable tbody tr td:nth-child(4) {
+	width: 7% !important;
+}
+html body .main #defaultTableContainer table.reportingClientsTable tbody tr td:nth-child(5) {
+	width: 21% !important;
+}
+html body .main #defaultTableContainer table.reportingClientsTable tbody tr td:nth-child(6) {
+	width: 20% !important;
+}
+html body .main #defaultTableContainer table.reportingClientsTable tbody tr td:nth-child(7) {
+	width: 20% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(1) {
+	width: 3% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(2) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(3) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(4) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(5) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(6) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(7) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(8) {
+	width: 7% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(9) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(10) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(11) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable tbody tr td:nth-child(12) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(1) {
+	width: 3% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(2) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(3) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(4) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(5) {
+	width: 10% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(6) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(7) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(8) {
+	width: 7% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(9) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(10) {
+	width: 15% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(11) {
+	width: 5% !important;
+}
+html body .main #defaultTableContainer table.reportingLoansTable thead tr th:nth-child(12) {
+	width: 5% !important;
+}
+*/
+.dataTables_scrollHeadInner {
+	/* -webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	box-sizing: border-box !important; */
+	/* padding-right: 0 !important; */
+	width:100% !important;
+}
+/* .standardTable table thead tr:nth-child(2) td {
+	padding-left: 0 !important;
+} */
+
+table.dataTable.no-footer {
+	border-bottom: 0px solid #111 !important;
+}
+tr.incomeStatementMainRow td {
+	font-weight: bold !important;
+}
+div#coallatralInfoPlaceHol .align-top {
+	vertical-align: top !important;
+}
+#dailogModalBoxHeader
+{
+    background-color: #666666;
+    color:white;
+}
+/* Table column alignments */
+.rateColumn, ._dateColumn, ._phone, ._money {
+	/*    width: 10%;*/
+	text-align: right;
+	padding-right: 10px !important;
+}
+.nameColumn, ._sex, ._normal {
+	/*    width:20%;*/
+	text-align: left;
+	padding-left: 10px !important;
+}
+._phone {
+	word-wrap: break-word !important;
+}
+/* .standardTable table tbody tr td:nth-child(odd) {
+	background-color: rgba(255,0,0,.2);
+} */
+
+.form-group .ui-currency-input:not(:first-child):not(:last-child) .form-control {
+	border-radius: 0;
+}
+#loanrepayment_img {
+	width: 100% !important;
+	height: auto !important;
+}

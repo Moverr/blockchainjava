@@ -1,0 +1,129 @@
+html body .navbar.navbar-fixed-top ul.nav li.user .input-group {
+	width: 230px;
+	margin: 18px;
+}
+html body .navbar.navbar-fixed-top ul.nav li.user .input-group input {
+	background-color: #fff;
+}
+html body .main #loanContainer #loan .panel-body div .form-group .input-group-addon {
+	min-width: 50px;
+	padding: 0 15px;
+	font-size: 14px;
+}
+#dashboardArea #dashboardProfile .panel-body .input-group-addon {
+	min-width: 120px;
+	text-align: right;
+	font-size: 14px;
+}
+#dashboardArea #dashboardProfile .panel-body .input-group {
+	margin-bottom: 10px;
+}
+#dashboardArea #dashboardProfile .panel-body .input-group input {
+	background-color: #fff;
+}
+#dashboardArea #dashboardAccount .panel-body .input-group-addon {
+	min-width: 200px;
+	text-align: right;
+	font-size: 14px;
+}
+#dashboardArea #dashboardAccount .panel-body .input-group {
+	margin-bottom: 10px;
+}
+#dashboardArea #dashboardAccount .panel-body .input-group input {
+	background-color: #fff;
+}
+#dashboardArea #dashboardInventory .panel .panel-body .input-group-addon {
+	min-width: 200px;
+	text-align: right;
+	font-size: 14px;
+}
+#dashboardArea #dashboardInventory .panel .panel-body .input-group {
+	margin-bottom: 10px;
+}
+html body .main #helpArea #profileArea .panel .panel-body .input-group-addon {
+	min-width: 120px;
+	text-align: right;
+	font-size: 14px;
+}
+html body .main #helpArea #profileArea .panel .panel-body .input-group {
+	margin-bottom: 10px;
+}
+html body .main #helpArea #accountArea .panel .panel-body .input-group-addon {
+	min-width: 170px;
+	text-align: right;
+	font-size: 14px;
+}
+html body .main #helpArea #accountArea .panel .panel-body .input-group {
+	margin-bottom: 10px;
+}
+html body .main #accountingContainer #glAccount .input-group[class*=col-] {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+html body .main #accountingContainer #glAccount .input-group[class*=col-] input {
+	background-color: #fff;
+}
+html body .input-group-addon {
+	background-color: #666666 !important;
+	color: white;
+}
+#helpOverview .panel-body .input-group-addon {
+	min-width: 120px;
+	text-align: right;
+	font-size: 14px;
+}
+#helpOverview .panel-body .input-group {
+	margin-bottom: 10px;
+}
+#helpOverview .panel-body .input-group input {
+	background-color: #fff;
+}
+.generalPanelForm .panel-body .input-group-addon {
+	min-width: 120px;
+	text-align: right;
+	font-size: 14px;
+}
+.generalPanelForm .panel-body .input-group {
+	margin-bottom: 10px;
+}
+.generalPanelForm .panel-body .input-group input {
+	background-color: #fff;
+}
+.has-warning .input-group-addon, .has-success .input-group-addon, .has-error .input-group-addon, .has-info .input-group-addon {
+	color: white;
+}
+.panel-body .input-group-addon {
+	/* min-width: 120px; */
+	min-width: 110px;
+	text-align: left;
+	font-size: 14px;
+	background-color: rgb(217, 217, 217) !important;
+	color: #464a4c;
+}
+html body .main #loanContainer #loan .panel-body div .form-group .input-group-addon {
+	min-width: 120px;
+}
+.input-group > .input-group-btn:last-child > .selectpicker {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	min-width: auto!important;
+}
+.input-group > .input-group-btn:first-child > .selectpicker {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+#groupContainer .input-group-addon {
+	background-color: rgb(217, 217, 217)
+}
+
+
+/* New Styles input-group resets */
+.input-group-addon, .form-control, .input-group-btn button {
+	height: 40px !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+textarea.form-control {
+	height: auto !important;
+}

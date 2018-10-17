@@ -1,0 +1,625 @@
+<div class="content" id="groupLoanClientContainer">
+    <!-- Create Loan Application -->  
+    <div class="content" id="createLoanApplication">
+        <div class="modal"></div>
+        <div class="row" id="Aapplication">
+            <form class="form-horizontal" id="createLoanApplicationForm">
+                <div class="" id="selectedClient">                                                
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Selected client</div>
+                        <div class="panel-body">
+
+                            <div class="col-sm-1">
+                            </div>
+
+                            <div class="col-sm-1">
+                                <div class="form-group"  >
+                                    <img class="manImg" id="loanClientImageID1" src="images/personPlaceholderNoText.png" height="320px" width="240px" style="padding-bottom:3px;" alt="pic">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="clientAwamoId" class="col-lg-4 control-label">awamo ID</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientAwamoId" placeholder="Awamo ID" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientFirstName" class="col-lg-4 control-label">First name</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientFirstName" placeholder="First name" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientMiddleName" class="col-lg-4 control-label">Middle name</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientMiddleName" placeholder="Middle name" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientLastName" class="col-lg-4 control-label">Last name</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientLastName" placeholder="Last name" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientBirthdate" class="col-lg-4 control-label">Birthdate</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientBirthdate" placeholder="Birthdate" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientNationality" class="col-lg-4 control-label">Nationality</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientNationality" placeholder="Nationality" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientSubmitdate" class="col-lg-4 control-label">Submit date</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientSubmitdate" placeholder="Submit date" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="clientIdDocumentType" class="col-lg-4 control-label">ID document type</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientIdDocumentType" placeholder="ID document type" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientIdDocument" class="col-lg-4 control-label">ID document</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientIdDocument" placeholder="ID document" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientPhone1" class="col-lg-4 control-label">Phone 1</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientPhone1" placeholder="Phone 1" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientPhone2" class="col-lg-4 control-label">Phone 2</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientPhone2" placeholder="Phone 2" disabled="disabled">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="clientGender" class="col-lg-4 control-label">Gender</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientGender" placeholder="Gender" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientLocation" class="col-lg-4 control-label">Location</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientLocation" placeholder="Location" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="selectedClientInformation">                                                 
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Client information</div>
+                        <div class="panel-body">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="clientAwamoId" class="col-lg-4 control-label">Province</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientProvince" placeholder="Province" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientFirstName" class="col-lg-4 control-label">City</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientCity" placeholder="City" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientFirstName" class="col-lg-4 control-label">Number of children in house</label>
+                                    <div class="col-lg-8">
+                                        <input type="number" class="form-control" id="loanClientFirstNOCIH" placeholder="Number of children in house" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientGender" class="col-lg-4 control-label">Living Area</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control" id="loanClientLivingArea"   required>
+                                            <option  selected="selected"></option>
+                                            <option value="RURAL">RURAL</option>
+                                            <option value="SLUM">SLUM</option>
+                                            <option value="URBAN">URBAN</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="clientIdDocumentType" class="col-lg-4 control-label">Street</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientStreet" placeholder="Street" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientIdDocumentType" class="col-lg-4 control-label">Number of children</label>
+                                    <div class="col-lg-8">
+                                        <input type="number" class="form-control" id="loanClientNOC" placeholder="Number of children" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientGender" class="col-lg-4 control-label">Martial Status</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control" id="loanClientMartialStatus"   required>
+                                            <option  selected="selected"></option>
+                                            <option value="SINGLE">SINGLE</option>
+                                            <option value="MARRIED">MARRIED</option>
+                                            <option value="DIVORCED">DIVORCED</option>
+                                            <option value="WIDOWED">WIDOWED</option>
+                                            <option value="SEPARATED">SEPARATED</option>
+                                            <option value="IN_A_RELATIONSHIP">IN_A_RELATIONSHIP</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                                            
+                </div>
+
+                <div id="employmentInformation">                                                
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Employment information</div>
+                        <div class="panel-body">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="clientGender" class="col-lg-4 control-label">Employed</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control" id="loanClientEmployed"   required>
+                                            <option  selected="selected"></option>
+                                            <option value="YES">YES</option>
+                                            <option value="NO">NO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientAwamoId" class="col-lg-4 control-label">Company name</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientEmpCompanyName" placeholder="Company name" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientFirstName" class="col-lg-4 control-label">Monthly income</label>
+                                    <div class="col-lg-8">
+                                        <input type="number" class="form-control" id="loanClientEmpMonIncome" placeholder="Monthly income" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientFirstName" class="col-lg-4 control-label">Sector</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control" id="loanClientEmpSector"   required>
+                                            <option  selected="selected"></option>
+                                            <option value="ACCOMMODATION">ACCOMMODATION</option>
+                                            <option value="AGRICULTURE">AGRICULTURE</option>
+                                            <option value="CONSTRUCTION">CONSTRUCTION</option>
+                                            <option value="EDUCATION">EDUCATION</option>
+                                            <option value="FINANCIAL">FINANCIAL</option>
+                                            <option value="FISHING">FISHING</option>
+                                            <option value="FOOD_PROCESSING">FOOD_PROCESSING</option>
+                                            <option value="FORESTRY">FORESTRY</option>
+                                            <option value="HEALTH">HEALTH</option>
+                                            <option value="INFORMATION_COMMUNICATION">INFORMATION_COMMUNICATION</option>
+                                            <option value="MINING">MINING</option>
+                                            <option value="RECREATION_PERSONAL">RECREATION_PERSONAL</option>
+                                            <option value="REAL_ESTATE">REAL_ESTATE</option>
+                                            <option value="STORAGE">STORAGE</option>
+                                            <option value="TRADING">TRADING</option>
+                                            <option value="TRANSPORT">TRANSPORT</option>
+                                            <option value="UTILITIES">UTILITIES</option>
+                                            <option value="OTHERS">OTHERS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientFirstName" class="col-lg-4 control-label">Province</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientEmpProvince" placeholder="Province" required autocomplete="off">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="clientIdDocumentType" class="col-lg-4 control-label">Start date</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientStartDate" placeholder="Start date" required readonly="readonly"  autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientIdDocumentType" class="col-lg-4 control-label">Number of employees</label>
+                                    <div class="col-lg-8">
+                                        <input type="number" class="form-control" id="loanClientEmpNOE" placeholder="Number of employees" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientGender" class="col-lg-4 control-label">Formally registered</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control" id="loanClientEmpFoRe"   required>
+                                            <option  selected="selected"></option>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientFirstName" class="col-lg-4 control-label">City</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientEmpCity" placeholder="City" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientFirstName" class="col-lg-4 control-label">Street</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="loanClientEmpStreet" placeholder="Street" required autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                                            
+                </div>
+
+                <div  id="selfEmploymentInformation">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Self employment information</div>
+                            <div class="panel-body">
+
+                                <div class="col-sm-2">
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="clientGender" class="col-lg-4 control-label">Self employed</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientSelfEmployed"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="YES">YES</option>
+                                                <option value="NO">NO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientAwamoId" class="col-lg-4 control-label">Company name</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" id="loanClientSelfEmpCompanyName" placeholder="Company name" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Monthly income</label>
+                                        <div class="col-lg-8">
+                                            <input type="number" class="form-control" id="loanClientSelfEmpMonIncome" placeholder="Monthly income" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Business sector</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientSelfEmpBSector"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="ACCOMMODATION">ACCOMMODATION</option>
+                                                <option value="AGRICULTURE">AGRICULTURE</option>
+                                                <option value="CONSTRUCTION">CONSTRUCTION</option>
+                                                <option value="EDUCATION">EDUCATION</option>
+                                                <option value="FINANCIAL">FINANCIAL</option>
+                                                <option value="FISHING">FISHING</option>
+                                                <option value="FOOD_PROCESSING">FOOD_PROCESSING</option>
+                                                <option value="FORESTRY">FORESTRY</option>
+                                                <option value="HEALTH">HEALTH</option>
+                                                <option value="INFORMATION_COMMUNICATION">INFORMATION_COMMUNICATION</option>
+                                                <option value="MINING">MINING</option>
+                                                <option value="RECREATION_PERSONAL">RECREATION_PERSONAL</option>
+                                                <option value="REAL_ESTATE">REAL_ESTATE</option>
+                                                <option value="STORAGE">STORAGE</option>
+                                                <option value="TRADING">TRADING</option>
+                                                <option value="TRANSPORT">TRANSPORT</option>
+                                                <option value="UTILITIES">UTILITIES</option>
+                                                <option value="OTHERS">OTHERS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientGender" class="col-lg-4 control-label">Formally registered</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientSelfEmpFoRe"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="true">YES</option>
+                                                <option value="false">NO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Province</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" id="loanClientSelfEmpProvince" placeholder="Province" required autocomplete="off">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="clientIdDocumentType" class="col-lg-4 control-label">Start date</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" id="loanClientSelfStartDate" placeholder="Start date" required autocomplete="off" readonly="readonly" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientIdDocumentType" class="col-lg-4 control-label">Number of employees</label>
+                                        <div class="col-lg-8">
+                                            <input type="number" class="form-control" id="loanClientSelfEmpNOE" placeholder="Number of employees" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Employment type</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientSelfEmpType"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="FARMER">FARMER</option>
+                                                <option value="OTHER">OTHER</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Agricultural product</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientSelfEmpAPro"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="CROPS">CROPS</option>
+                                                <option value="SALES_TRADING">SALES_TRADING</option>
+                                                <option value="FRUITS">FRUITS</option>
+                                                <option value="VEGETABLES">VEGETABLES</option>
+                                                <option value="FOOD_PROCESSING">FOOD_PROCESSING</option>
+                                                <option value="LIVESTOCK_POULTRY">LIVESTOCK_POULTRY</option>
+                                                <option value="OTHER">OTHER</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">City</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" id="loanClientSelfEmpCity" placeholder="City" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Street</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" id="loanClientSelfEmpStreet" placeholder="Street" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div  id="loanInformation">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Loan information</div>
+                            <div class="panel-body">
+
+                                <div class="col-sm-2">
+
+                                </div>
+                                <div class="col-sm-4">                                                            
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Principal</label>
+                                        <div class="col-lg-8">
+                                            <input type="number" class="form-control" id="loanClientPrincipal" placeholder="Principal" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientAwamoId" class="col-lg-4 control-label">Duration</label>
+                                        <div class="col-lg-8">
+                                            <input type="number" class="form-control" id="loanClientDuration" placeholder="Duration" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Number of repayments</label>
+                                        <div class="col-lg-8">
+                                            <input type="number" class="form-control" id="loanClientNORe" placeholder="Number of repayments" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientGender" class="col-lg-4 control-label">Amortization Type</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientAmortizationType"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="EQUAL_PRINCIPAL_PAYMENTS">EQUAL_PRINCIPAL_PAYMENTS</option>
+                                                <option value="EQUAL_INSTALLMENTS">EQUAL_INSTALLMENTS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Annual interest rate (%)</label>
+                                        <div class="col-lg-8">
+                                            <input type="number" class="form-control" id="loanClientAIR" placeholder="Annual interest rate" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="clientIdDocumentType" class="col-lg-4 control-label">Duration type</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientDuTy"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="DAYS">DAYS</option>
+                                                <option value="WEEKS">WEEKS</option>
+                                                <option value="MONTHS">MONTHS</option>
+                                                <option value="YEARS">YEARS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientIdDocumentType" class="col-lg-4 control-label">Disbursement date</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" id="loanClientDiDate" placeholder="Disbursement date" required autocomplete="off" readonly="readonly" style="background-color: white;">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientGender" class="col-lg-4 control-label">Interest type</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientInType"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="DECLINING_BALANCE">DECLINING_BALANCE</option>
+                                                <option value="FLAT">FLAT</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientGender" class="col-lg-4 control-label">Interest calculation period type</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientICPT"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="DAILY">DAILY</option>
+                                                <option value="LIKE_REPAYMENT">LIKE_REPAYMENT</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="clientGender" class="col-lg-4 control-label">Loan Purpose</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientReason"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="WORKING_CAPITAL">WORKING_CAPITAL</option>
+                                                <option value="EQUIPMENT">EQUIPMENT</option>
+                                                <option value="BUILDING_FURNITURE">BUILDING_FURNITURE</option>
+                                                <option value="VEHICLES">VEHICLES</option>
+                                                <option value="TRAINING">TRAINING</option>
+                                                <option value="OTHER">OTHER</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  id="collateralInformation">
+                    <div class="col-sm-12"> 
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Collateral information</div>
+                            <div class="panel-body">
+
+                                <div class="col-sm-2">
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="clientAwamoId" class="col-lg-4 control-label">Credit collateral type</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientCerditCT"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="UNSECURED">UNSECURED</option>
+                                                <option value="LAND">LAND</option>
+                                                <option value="BUILDING">BUILDING</option>
+                                                <option value="VEHICLE">VEHICLE</option>
+                                                <option value="EQUIPMENT">EQUIPMENT</option>
+                                                <option value="INVENTORY">INVENTORY</option>
+                                                <option value="CASH_DEPOSITS">CASH_DEPOSITS</option>
+                                                <option value="OTHERS">OTHERS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientAwamoId" class="col-lg-4 control-label">Has guarantor</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control" id="loanClientHaveGuarantor"   required>
+                                                <option  selected="selected"></option>
+                                                <option value="YES">YES</option>
+                                                <option value="NO">NO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientIdDocumentType" class="col-lg-4 control-label">Guarantor income</label>
+                                        <div class="col-lg-8">
+                                            <input type="number" class="form-control" id="loanClientGuarantorIncome" placeholder="Guarantor income" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="clientFirstName" class="col-lg-4 control-label">Credit collateral value</label>
+                                        <div class="col-lg-8">
+                                            <input type="number" class="form-control" id="loanClientCerditCTV" placeholder="Credit collateral value" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="clientIdDocumentType" class="col-lg-4 control-label">Guarantor name</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" id="loanClientGuarantorName" placeholder="Guarantor name" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- submit -->
+                <div class="panel-body" style="padding: 0px;"> 
+                    <button id="createLoanApplicationBottom" type="submit"  class="btn customSubmitButton pull-right" value="Submit" style="display: block;">
+                        <i class="mdl-color-text--white material-icons" role="presentation">create</i>
+                        Submit
+                    </button>
+
+                    <button id="confirmLoanApplicationBottom" type="button"  class="btn customSubmitButton pull-right" value="Submit" style="display: block;">
+                        <i class="mdl-color-text--white material-icons" role="presentation">done</i>
+                        Confirm
+                    </button>
+
+                    <button id="modifyLoanApplicationBottom" type="button"  class="btn customSubmitButton pull-right" value="Submit" style="display: block;">
+                        <i class="mdl-color-text--white material-icons" role="presentation">Edit</i>
+                        Modify
+                    </button>
+
+                    <button id="listLoanApplicationBottom" type="button"  class="btn customCancelButton pull-right" value="Submit" style="display: block;">
+                        <i class="mdl-color-text--white material-icons" role="presentation">view_list</i>
+                        List Loans
+                    </button>
+
+                    <button id="newLoanApplicationBottom" type="button"  class="btn btn-primary default  pull-right" value="Submit" style="display: block;">
+                        <i class="mdl-color-text--white material-icons" role="presentation">create</i>
+                        Create Loan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

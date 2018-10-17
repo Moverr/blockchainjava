@@ -1,0 +1,124 @@
+<div class="container content" id="login">
+    <div class="col-lg-4 col-sm-6 col-lg-offset-4 col-sm-offset-2">
+        <div class="loginbox">
+            <form role="form" action="#" id="loginForm">
+                <input type="hidden" value="login" id="actionValue" name="actionValue">
+                <fieldset>
+                    <!-- Logo --> 
+                    <div class="row">
+                        <div class="center-block">
+                            <img class="login-logo" src="images/awamo_logo_triangle_only_color_v10_150x122.png" alt="awamo360">
+                        </div>
+                    </div>
+
+                    <!-- Login  --> 
+                    <div class="row" id="loginRow">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" >
+                                        <i class="glyphicon glyphicon-user"></i> Username 
+                                    </span> 
+                                    <input class="form-control" placeholder="Username" name="loginname" id="loginname" type="text" autofocus required="required">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="padding-right:1em ;">
+                                        <i class="glyphicon glyphicon-lock"></i> Password 
+                                    </span>
+                                    <input class="form-control" placeholder="Password" name="password" id="password" type="password" value="" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-lg btn-primary btn-block customCancelButton" style="width: 100%; margin-left: 0px;" value="login">
+                                    <span class="loginFormSubmitButtonText">Log in</span>
+                                    <img class="loginFormSubmitButtonImage" src="images/ajax-loader.gif" alt="loading">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="forgotPasswordLink">
+                            <a href="#">I forgot my password</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Forgot Password Box -->
+                    <div class="row" id="forgotPasswordRow">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="forgotPasswordData">Username, Email or Phone Number</label>
+                                <input class="form-control" placeholder="Username, Email or Phone Number" name="forgotPasswordData" id="forgotPasswordData" type="text">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-lg btn-primary btn-block customCancelButton  " style="width: 100%;" value="forgotPassword">
+                                    <span class="loginFormSubmitButtonText">Request new password</span>
+                                    <img class="loginFormSubmitButtonImage forgotPasswordSubmitImage" src="images/ajax-loader.gif" alt="loading">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="backToLoginLink">
+                            <a href="#">back to login</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Update Password Box -->
+                    <div class="row" id="updatePasswordRow">
+                        <div class="col-sm-12">
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" > Code : </span>
+                                    <input class="form-control" placeholder=" Enter Code " name="codedata" id="codedata" type="text"   />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" >New Password : </span>
+                                    <input class="form-control" placeholder=" Enter Passord  " name="newpassword" id="newpassword" type="password"  />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" >Repeat Password : </span>
+                                    <input class="form-control" placeholder=" Repeat Password  " name="newpassword" id="repeatnewpassword" type="password"   />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-lg btn-primary btn-block customCancelButton  " style="width: 100%;" value="forgotPassword">
+                                    <span class="loginFormSubmitButtonText">Update Password</span>
+                                    <img class="loginFormSubmitButtonImage forgotPasswordSubmitImage" src="images/ajax-loader.gif" alt="loading">
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="backToLoginLink">
+                            <a href="#">back to login</a>
+                        </div>
+                    </div>
+
+
+
+                </fieldset>
+            </form>
+
+            <p class="message">
+                login failed, please try again
+            </p>
+
+            <div class="row awamoLinks customCancelButton " style="width: auto;">
+                <a href="http://awamo.com/" target="_blank"><span class="glyphicons glyphicons-global"></span></a>
+                <a href="https://www.facebook.com/awamo.gmbh" target="_blank"><span class="social social-facebook"></span></a>
+                <a href="https://www.linkedin.com/company/9473106" target="_blank"><span class="social social-linked-in"></span></a>
+                <a href="https://twitter.com/awamo_group" target="_blank"><span class="social social-twitter"></span></a>
+            </div>
+        </div>
+    </div>
+</div>

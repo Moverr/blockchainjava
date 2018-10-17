@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="Dirk Podolak">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
+        <title>Cockpit | awamo 360</title>
+
+        <!-- libraries -->
+        <link href="css/libs/bootstrap.min.css" rel="stylesheet">
+        <link href="css/libs/glyphicons.css" rel="stylesheet">
+        <link href="css/libs/glyphicons-social.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/cockpit.css" rel="stylesheet">
+        <link href="css/libs/theme.bootstrap.min.css" rel="stylesheet">       
+
+    </head>
+
+    <body>
+        <!-- top navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="images/awamo_Cockpit_logo_white_v11.png" alt="awamo 360 cockpit"></a>
+            </div>
+        </nav>
+
+        <!-- main content -->
+        <div class="container-fluid ">
+            <div class="row">
+                <!-- login -->
+                <div class="container content" id="login">
+                    <div class="col-lg-4 col-sm-6 col-lg-offset-4 col-sm-offset-2">
+                        <div class="loginbox">
+                            <form role="form" action="#" id="tenantForm">
+                                <input type="hidden" value="tenentCheck" id="actionValue" name="actionValue">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="center-block">
+                                            <img class="login-logo" src="images/awamo_logo_triangle_only_color_v10_150x122.png" alt="awamo360">
+                                        </div>
+                                    </div>
+
+                                    <div class="row" id="loginRow">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon" >
+                                                        <i class="glyphicon glyphicon-certificate"></i> Tenant ID 
+                                                    </span> 
+                                                    <input class="form-control" placeholder="TenantID" name="tenantId" id="tenantId_Id" type="text" autofocus required="required">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-lg btn-primary btn-block customCancelButton " style="width: 100%; margin-left: 0px;" value="startTenant">
+                                                    <span class="loginFormSubmitButtonText">Start</span>
+                                                    <img class="loginFormSubmitButtonImage" src="images/ajax-loader.gif" alt="loading">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+
+                            <p class="message">
+                                Wrong TenantId.
+                            </p>
+
+                            <div class="row awamoLinks customCancelButton " style="width: auto;">
+                                <a href="http://awamo.com/" target="_blank"><span class="glyphicons glyphicons-global"></span></a>
+                                <a href="https://www.facebook.com/awamo.gmbh" target="_blank"><span class="social social-facebook"></span></a>
+                                <a href="https://www.linkedin.com/company/9473106" target="_blank"><span class="social social-linked-in"></span></a>
+                                <a href="https://twitter.com/awamo_group" target="_blank"><span class="social social-twitter"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="footer">
+            <p id="statusbar"></p>
+        </footer>
+        <script type="text/javascript" src="js/libs/jquery/jquery-2.2.3.js"></script>
+
+        <script type="text/javascript" src="js/libs/bootstrap/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="js/app/utilities.js"></script>
+        <script type="text/javascript" src="js/app/initApp.js"></script>
+
+
+
+        <script>
+            function ajax(url, type, successCallback, data, headers, failCallback, alwaysCallback) {
+             //   var host = host = window.location.protocol + '//cockpit.awamo360.com';
+
+        if (typeof (headers) === "undefined") {
+                    var headers = {
+                            tenantId: $('#tenantId_Id').val()
+                        };
+                }
+                if (typeof (failCallback) === "undefined") {
+                    failCallback = function (e) {
+                        //if
+                        console.log('fail');
+                        console.log(e);
+                        //hideLoader();
+                    };
+                }
+                if (typeof (alwaysCallback) === 'undefined') {
+                    alwaysCallback = function (XMLHttpRequest, statusText, err) {
+                        //console.log('always callback not implemented for this request');
+                        //hideLoader();
+                    }
+                }
+                var xhr = $.ajax({
+                    url:  host+url,
+                    type: type,
+                    data: data,
+                    headers: headers,
+                    dataType: 'json',
+                    contentType: "application/json; charset=utf-8",
+                    timeout: 120000
+                            //timeout: 15000
+                })
+                        .done(function (data, statusText, XMLHttpRequest) {
+                            successCallback(data, statusText, XMLHttpRequest);
+                        })
+                        .fail(function (XMLHttpRequest, statusText, err) {
+                            failCallback(XMLHttpRequest, statusText, err);
+                        })
+                        .always(function (XMLHttpRequest, statusText, err) {
+                            alwaysCallback(XMLHttpRequest, statusText, err);
+                        });
+                return xhr;
+            };
+            function statusbar(text) {
+                // print text, wait two seconds, fadeout text within two seconds, empty text
+                var $statusbar = $('#statusbar');
+                $statusbar.text(text);
+                // $('#footerContainer').show().delay(2000).fadeOut();
+                if (status_bar_disable === false)
+                    $('#footerContainer').show().delay(2000).fadeOut();
+            };
+            function initLogin() {
+                $('#login').show();
+                $('#tenantForm').submit(function (event) {
+                    event.preventDefault();
+                    var actionValue = $('#actionValue').val();
+                    if ('tenentCheck' === actionValue) {
+                        statusbar('waiting for server reply on tenantId check');
+                        var headers = {
+                            tenantId: $('#tenantId_Id').val()
+                        };
+
+                        ajax(
+                                '/tenant/v1d/checkTenant',
+                                'POST',
+                                (function () {
+                                    window.location = "/" + $('#tenantId_Id').val();
+                                }),
+                                null,
+                                headers,
+                                (function (e) {
+                                    $('.loginbox .message').show();
+                                }));
+
+                    }
+                });
+
+
+                /*// init and start login
+                 if (!host.startsWith('http://localhost') && isTest) {
+                 //alert('Error on page, please contact the development team')
+                 //throw new Error("test data exists");
+                 }
+                 $('#loginForm').submit(handlers['Communication'].loginFormSubmitHandler);
+                 
+                 $('.forgotPasswordLink a').on('click touch', function () {
+                 $('#actionValue').val('forgotPassword');
+                 $('#loginRow input').removeAttr('required');
+                 $('#forgotPasswordRow input').attr('required', 'required');
+                 $('#loginRow').hide();
+                 $('#forgotPasswordRow').show();
+                 $('#updatePasswordRow input').removeAttr('required');
+                 $('#updatePasswordRow').hide();
+                 
+                 $("#forgotPasswordData").val("");
+                 
+                 $('.message').hide();
+                 });
+                 
+                 $('.backToLoginLink a').on('click touch', function () {
+                 $('#actionValue').val('login');
+                 $('#loginRow input').attr('required', 'required');
+                 
+                 $('#forgotPasswordRow input').removeAttr('required');
+                 $('#updatePasswordRow input').removeAttr('required');
+                 
+                 $('#loginRow').show();
+                 
+                 $('#forgotPasswordRow').hide();
+                 $('#updatePasswordRow').hide();
+                 
+                 $('.message').hide();
+                 });
+                 
+                 statusbar('waiting for user login');
+                 //window.location.hash = "#login";
+                 }
+                 ;*/
+
+            }
+            $(function () {
+                initLogin();
+            })
+
+
+        </script>
+
+    </body>
+</html>

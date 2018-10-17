@@ -1,0 +1,164 @@
+
+                    <ul class="nav nav-sidebar">
+
+                        <!-- dashboard -->
+                        <li class="parentitem bold active" id="dashboard" data-handler="Dashboard" data-action="overview">
+                            <a href="#"><span class="glyphicons glyphicons-notes-2"></span>Dashboard</a>
+                        </li>
+
+                        <!-- actionRequired -->
+                        <li class="parentitem bold" id="actionRequired" data-handler="ActionRequired" data-action="overview">
+                            <a href="#">
+                                <span class="glyphicons glyphicons-inbox-in"></span>
+                                Action Required
+                                <span class="badge" data-counter="0" data-counterkey="actionRequired">0</span>
+                            </a>
+                        </li>                        
+                        <li class="hidden subitem" id="actionRequiredLoanApplications" data-parent="actionRequired" data-handler="Loan" data-action="getApplications">
+                            <a href="#">Approve Loan Applications <span class="badge" data-counter="0" data-counterkey="loanApplications" id="actionRequired-loanApplications">0</span></a>
+                        </li>
+                        <li class="hidden subitem" id="actionRequiredLoanSigningContracts" data-parent="actionRequired" data-handler="Loan" data-action="getSingngContracts">
+                            <a href="#">Sign Loan Contracts <span class="badge" data-counter="0" data-counterkey="loanApproved" id="actionRequired-loanSigningContracts">0</span></a>
+                        </li>
+                        <li class="hidden subitem" id="actionRequiredLoanDisbursements" data-parent="actionRequired" data-handler="Loan" data-action="getDisbursements">
+                            <a href="#">Allow Loan Disbursements<span class="badge" data-counter="0" data-counterkey="loanDisbursements" id="actionRequired-loanDisbursements">0</span></a>
+                        </li>
+                        <li class="hidden subitem" id="actionRequiredLoanDisbursements" data-parent="actionRequired" data-handler="Loan" data-action="getAllowedDisbursements">
+                            <a href="#">Disburse Loan<span class="badge" data-counter="0" data-counterkey="loanDisburse" id="actionRequired-loanAllowedDisbursment">0</span></a>
+                        </li>
+                        <li class="hidden subitem" id="actionRequiredSavingsAccountApplications" data-parent="actionRequired" data-handler="SavingsAccount" data-action="getApplications">
+                            <a href="#">Savings Account Applications <span class="badge" data-counter="0" data-counterkey="savingsAccountApplications" id="actionRequired-savingsAccountApplications" >0</span></a>
+                        </li>
+                        <li class="parentitem bold" id="manageClients" data-handler="Options" data-action="manageClientsOverview">
+                            <a href="#">
+                                <span class="glyphicons glyphicons-inbox"></span>
+                                Manage Clients
+                            </a>
+                        </li>
+                        <li class="hidden subitem" id="createClientSideBar_2" data-parent="manageClients" data-handler="Options" data-action="manageClientCreateClient">
+                            <a href="#">Add Client</a>
+                        </li>
+                        <li class="hidden subitem" id="ClientsSideBarItem_2" data-parent="manageClients" data-handler="Client" data-action="manageClientsGetAll">
+                            <a href="#">View/Edit Client</a>
+                        </li>
+
+                        <!-- ----- shares -------------------------------------------------------------------------------------------------------------------------- 
+                        <li class="hidden subitem" data-parent="actionRequired" data-handler="Share" data-action="purchaseApplication">
+                            <a href="#">Purchase Share</a>
+                        </li>
+                        <li class="hidden subitem" data-parent="actionRequired" data-handler="Share" data-action="approvePurchase">
+                            <a href="#">Approve Share Purchase<span class="badge" data-counter="0" data-counterkey="sharePurchaseApplications" id="actionRequired-sharePurchaseApplications">0</span></a>
+                        </li>
+                        <li class="hidden subitem" data-parent="actionRequired" data-handler="Share" data-action="sellApplication">
+                            <a href="#">Sell Share</a>
+                        </li>
+                        <li class="hidden subitem" data-parent="actionRequired" data-handler="Share" data-action="approveSale">
+                            <a href="#">Approve Share Sale<span class="badge" data-counter="0" data-counterkey="shareSaleApplications" id="actionRequired-shareSaleApplications">0</span></a>
+                        </li>-->
+                        <!-- ----- /shares ------------------------------------------------------------------------------------------------------------------------- -->
+
+                        <!-- activity -->
+                        <!--                        <li class="parentitem bold" id="activity" style="display: none;">
+                                                    <a href="#"><span class="glyphicons glyphicons-retweet"></span>Activity</a>
+                                                </li>
+                                                <li class="hidden subitem" data-parent="activity" data-handler="" data-action="">
+                                                    <a href="#">Daily Cash Movements</a>
+                                                </li>-->
+
+                        <!-- Business -->
+
+                        <li class="parentitem bold" id="options" data-handler="Options" data-action="overview">
+                            <a href="#">
+                                <span class="glyphicons glyphicons-notes-2"></span>
+                                Business
+                            </a>
+                        </li>
+                        <li class="hidden subitem" id="createClientSideBar" data-parent="options" data-handler="Options" data-action="createClient">
+                            <a href="#">Add Client</a>
+                        </li>
+                        <li class="hidden subitem" id="createLoanSideBar" data-parent="options" data-handler="Client" data-action="getAllClientsForLoanApplication">
+                            <a href="#">Create Loan Application</a>
+                        </li>
+
+                        <!-- Accounting -->
+                        <li class="parentitem bold" id="accounting" data-handler="Accounting" data-action="overview">
+                            <a href="#">
+                                <span class="glyphicons glyphicons-keyboard-wireless"></span>
+                                Accounting
+                            </a>
+                        </li>
+                        <li class="hidden subitem" data-parent="accounting" data-handler="Accounting" data-action="chartOfAccounts">
+                            <a href="#">Chart of accounts</a>
+                        </li>
+                        <li class="hidden subitem" data-parent="accounting" data-handler="Accounting" data-action="create">
+                            <a href="#">New accounting entry</a>
+                        </li>
+                        <li class="hidden subitem" data-parent="accounting" data-handler="Accounting" data-action="balanceSheet">
+                            <a href="#">Balance sheet</a>
+                        </li>
+
+                        <li class="hidden subitem" data-parent="accounting" data-handler="Accounting" data-action="incomeStatement">
+                            <a href="#">Income statement</a>
+                        </li>
+                        <!--                        <li class="hidden subitem" data-parent="accounting" data-handler="Accounting" data-action="reportCashflowStatement">
+                                                    <a href="#">Cashflow statement</a>
+                                                </li>-->
+                        <li class="hidden subitem" data-parent="accounting" data-handler="Accounting" data-action="generalLedgerAccount">
+                            <a href="#">General ledger account</a>
+                        </li>
+
+                        <!-- reporting -->
+                        <li class="parentitem bold" id="reporting" data-handler="Reporting" data-action="overview">
+                            <a href="#">
+                                <span class="glyphicons glyphicons-pie-chart"></span>
+                                Reporting
+                            </a>
+                        </li>
+
+                        <li class="hidden subitem" id="PortfolioSideBarItem" data-parent="reporting" data-handler="Reporting" data-action="getPortfolio">
+                            <a href="#">Portfolio</a>
+                        </li>
+                        <li class="hidden subitem"  data-parent="reporting" data-handler="Reporting" data-action="keyPerformanceIndicators">
+                            <a href="#">Key Performance Indicators</a>
+                        </li>
+                        <li class="hidden subitem" id="ClientsSideBarItem" data-parent="reporting" data-handler="Client" data-action="getAll">
+                            <a href="#">Clients</a>
+                        </li>
+                        <li class="hidden subitem"  id="LoansSideBarItem" data-parent="reporting" data-handler="Loan" data-action="firstGenericLoanReports" >
+                            <a href="#">Loans</a>
+                        </li>
+                        <li class="hidden subitem" id="SavingsSideBarItem" data-parent="reporting" data-handler="SavingsAccount" data-action="getAll">
+                            <a href="#">Savings Accounts</a>
+                        </li>
+
+                        <!--                        <li class="hidden subitem" data-parent="reporting" data-handler="SACCOShare" data-action="TODO">
+                                                    <a href="#">SACCO Share Reports</a>
+                                                </li>-->
+
+                        <li class="hidden subitem"  id="TransactionsSideBarItem" data-parent="reporting" data-handler="Reporting" data-action="getTransactions">
+                            <a href="#">Transactions</a>
+                        </li>
+
+                        <!-- Geo Information -->
+                        <li class="parentitem bold" id="getClientMap" data-handler="Reporting" data-action="getClientMap">
+                            <a href="#">
+                                <!--<span class="glyphicons glyphicons-notes-2"></span>-->
+                                <span class="glyphicons glyphicons-globe"></span>
+                                Geo Information
+                            </a>
+                        </li>
+
+                        <!-- help -->
+                        <li class="parentitem" id="help" data-handler="Communication" data-action="help">
+                            <a href="#">
+                                <span class="glyphicons glyphicons-question-sign"></span>Help
+                            </a>
+                        </li>
+
+                        <!-- about -->
+                        <li class="parentitem" id="about" data-handler="Communication" data-action="about">
+                            <a href="#">
+                                <span class="glyphicons glyphicons-info-sign"></span>About
+                            </a>
+                        </li>
+                    </ul>

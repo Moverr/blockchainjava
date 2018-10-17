@@ -1,0 +1,41 @@
+<div class="col-lg-4 extra-guarantor">
+    <h6>Guarantor Info</h6>
+    <div class="form-group inputGroupContainer">
+        <div class="input-group">
+            <div class="input-group-addon">Has Guarantor</div>
+            <select class="form-control guarantor-presence" required="">
+                <option value="" selected="selected">Select</option>
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
+            </select>
+        </div>
+        <p class="help-block"></p>
+    </div>
+    <div class="form-group inputGroupContainer">
+        <div class="input-group">
+            <div class="input-group-addon">Name</div>
+            <input type="text" data-type="string" minlength="4" maxlength="70" class="form-control guarantor-name" placeholder="Guarantor Name" required="" autocomplete="off">
+        </div>
+        <p class="help-block"></p>
+    </div>
+    <div class="form-group inputGroupContainer">
+        <div class="input-group">
+            <div class="input-group-addon addonToolTip" title="Monthly Income">Income</div>
+            <input type="currency" min="0" data-type="thousand-commas" step="500" minamount="0" class="form-control thousand-commas currency-input guarantor-income" placeholder="Guarantor Income" required="" autocomplete="off"><span class="input-group-addon ext currencyExtensionAddon">KES</span></div>
+        <p class="help-block"></p>
+    </div>
+    <div class="form-group inputGroupContainer">
+        <div class="input-group">
+            <div class="input-group-addon addonToolTip" title="Phone Number" style=" min-width: 4px;padding:6px 8px">Phone</div>
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle country-btn" data-toggle="dropdown" style="background-color:white;color:#464a4c; border-radius: 1px;">
+                    <img src="img/flags/ug.png" style="height: 20px;width: 20px"><span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right phoneCountryPickerList country-list" role="menu">
+                </ul>
+            </div>
+            <input type="tel" class="form-control phone-field guarantor-phone" data-type="phone" placeholder="Guarantor Phone Number" required autocomplete="off" countryCode="">
+        </div>
+        <p class="help-block"></p>
+    </div>
+</div>

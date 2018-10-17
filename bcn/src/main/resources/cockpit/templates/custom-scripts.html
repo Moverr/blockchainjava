@@ -1,0 +1,442 @@
+<script>
+	$(function () {
+		$("#tFromDatePicker").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate) {
+						var option =
+								"minDate",
+								instance = $(this).data("datepicker"),
+								date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+						$("#tToDatePicker").datepicker("option", option, date);
+						if ($("#tFromDatePicker").val() !== "")
+						{
+							var d = $("#tFromDatePicker").datepicker("getDate");
+							d.setHours(0);
+							transactionsFromDate = d.getTime();
+							ReportingHandler.prototype.showTransactions();
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$(function () {
+		$("#tToDatePicker").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate) {
+						var option =
+								"maxDate",
+								instance = $(this).data("datepicker"),
+								date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+						$("#tFromDatePicker").datepicker("option", option, date);
+						if ($("#tToDatePicker").val() !== "")
+						{
+							var d = $("#tToDatePicker").datepicker("getDate");
+							d.setHours(24);
+							transactionsToDate = d.getTime();
+							ReportingHandler.prototype.showTransactions();
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$('#ClearDatesTransactions').on('click', function () {
+		$.datepicker._clearDate($("#tToDatePicker"));
+		$.datepicker._clearDate($("#tFromDatePicker"));
+		transactionsFromDate = "0";
+		transactionsToDate = "999999999999999";
+		ReportingHandler.prototype.showTransactions();
+	});
+
+	$(function () {
+		$("#pdFromDatePicker").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate) {
+						var option =
+								"minDate",
+								instance = $(this).data("datepicker"),
+								date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+						$("#pdToDatePicker").datepicker("option", option, date);
+						if ($("#pdFromDatePicker").val() !== "")
+						{
+							var d = $("#pdFromDatePicker").datepicker("getDate");
+							d.setHours(0);
+							fromRepaymentDateLimit = d.getTime();
+							LoanHandler.self.genericLoanReports(loanList.getListByStatus('ACTIVE').filter(function (loan) {
+								return LoanHandler.prototype.hasPayment(loan);
+							}));
+							$('#datesSelectorPaymentDue').show();
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$(function () {
+		$("#pdToDatePicker").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate) {
+						var option =
+								"maxDate",
+								instance = $(this).data("datepicker"),
+								date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+						$("#pdFromDatePicker").datepicker("option", option, date);
+						if ($("#pdToDatePicker").val() !== "")
+						{
+							var d = $("#pdToDatePicker").datepicker("getDate");
+							d.setHours(24);
+							toRepaymentDateLimit = d.getTime();
+							LoanHandler.self.genericLoanReports(loanList.getListByStatus('ACTIVE').filter(function (loan) {
+								return LoanHandler.prototype.hasPayment(loan);
+							}));
+							$('#datesSelectorPaymentDue').show();
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$('#ClearDatesPd').on('click', function () {
+		$.datepicker._clearDate($("#pdToDatePicker"));
+		$.datepicker._clearDate($("#pdFromDatePicker"));
+		fromRepaymentDateLimit = "0";
+		toRepaymentDateLimit = "999999999999999";
+		LoanHandler.self.genericLoanReports(loanList.getListByStatus('ACTIVE').filter(function (loan) {
+			return LoanHandler.prototype.hasPayment(loan);
+		}));
+		$('#datesSelectorPaymentDue').show();
+	});
+
+	$(function () {
+		$("#edFromDatePicker").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate) {
+						var option =
+								"minDate",
+								instance = $(this).data("datepicker"),
+								date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+						$("#edToDatePicker").datepicker("option", option, date);
+						if ($("#edFromDatePicker").val() !== "")
+						{
+							var d = $("#edFromDatePicker").datepicker("getDate");
+							d.setHours(0);
+							fromLoanEndDateDateLimit = d.getTime();
+
+							LoanHandler.self.genericLoanReports(loanList.getListByStatus('OVERPAID').filter(function (loan) {
+								return LoanHandler.prototype.fullyRepaid(loan);
+							}));
+							$('#datesSelectorLoanEndDate').show();
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$(function () {
+		$("#edToDatePicker").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate) {
+						var option =
+								"maxDate",
+								instance = $(this).data("datepicker"),
+								date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+						$("#edFromDatePicker").datepicker("option", option, date);
+						if ($("#edToDatePicker").val() !== "")
+						{
+							var d = $("#edToDatePicker").datepicker("getDate");
+							d.setHours(24);
+							toLoanEndDateDateLimit = d.getTime();
+
+							LoanHandler.self.genericLoanReports(loanList.getListByStatus('OVERPAID').filter(function (loan) {
+								return LoanHandler.prototype.fullyRepaid(loan);
+							}));
+							$('#datesSelectorLoanEndDate').show();
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$('#ClearDatesEd').on('click', function () {
+		$.datepicker._clearDate($("#edToDatePicker"));
+		$.datepicker._clearDate($("#edFromDatePicker"));
+		fromLoanEndDateDateLimit = "0";
+		toLoanEndDateDateLimit = "999999999999999";
+
+		$('#datesSelectorLoanEndDate').show();
+	});
+
+	$(function () {
+		$("#profileBirthdate").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate) {
+
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$(function () {
+		$("#createClientBirthdate").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:",
+					maxDate: "-14Y",
+					onSelect: function (selectedDate, el) {
+						var d = $("#createClientBirthdate").datepicker("getDate");
+						d.setHours(0);
+						clientSelectedBdate = d.getTime();
+						if (el.input) {
+							el.input.trigger('change');
+							el.input.val(d.toDateString());
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$(function () {
+		$("#manageClientBirthdate").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:",
+					maxDate: "-14Y",
+					onSelect: function (selectedDate, el) {
+						var d = $("#manageClientBirthdate").datepicker("getDate");
+						d.setHours(0);
+						manageClientEditedBirthDate = d.getTime();
+						if (el.input) {
+							el.input.trigger('change');
+							el.input.val(d.toDateString());
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$(function () {
+		$("#office_date_opened").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate, el) {
+						var d = $("#office_date_opened").datepicker("getDate");
+						d.setHours(0);
+						manageOfficeCreationDate = d.getTime();
+						if (el.input) {
+							el.input.trigger('change');
+							el.input.val(d.toDateString());
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+            $(function () {
+                $("#share_purchase_date").datepicker(
+                        {
+                            changeMonth: true,
+                            changeYear: true,
+                            yearRange: "-100:+0",
+                            onSelect: function (selectedDate, el) {
+                                var d = $("#share_purchase_date").datepicker("getDate");
+                                d.setHours(0);
+                                share_purchase_date = d.getTime();
+                                if (el.input) {
+                                    el.input.trigger('change');
+                                    el.input.val(d.toDateString());
+                                }
+                            },
+                            dateFormat: 'dd M yy'
+                        }
+                );
+            });
+
+
+	$(function () {
+		$("#loanClientStartDate").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate, el) {
+						var d = $("#loanClientStartDate").datepicker("getDate");
+						d.setHours(0);
+						loanEmpStartDate = d.getTime();
+						if (el.input) {
+							el.input.trigger('change');
+							el.input.val(d.toDateString());
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$(function () {
+		$("#loanClientSelfStartDate").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate, el) {
+						var d = $("#loanClientSelfStartDate").datepicker("getDate");
+						d.setHours(0);
+						loanSelfEmpStartDate = d.getTime();
+						if (el.input) {
+							el.input.trigger('change');
+							el.input.val(d.toDateString());
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+
+	$(function () {
+		$("#loanClientDiDate").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					minDate: '+0D',
+					onSelect: function (selectedDate, el) {
+						var d = $("#loanClientDiDate").datepicker("getDate");
+						d.setHours(0);
+						loanDisDate = d.getTime();
+						if (el.input) {
+							el.input.trigger('change');
+							el.input.val(d.toDateString());
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+		$("#groupLoanClientDiDate").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					minDate: '+0D',
+					onSelect: function (selectedDate, el) {
+						var d = $("#groupLoanClientDiDate").datepicker("getDate");
+						d.setHours(0);
+						loanDisDate = d.getTime();
+						if (el.input) {
+							el.input.trigger('change');
+							el.input.val(d.toDateString());
+						}
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+	selecteDate = null;
+	$(function () {
+		$(".datetimepicker").datepicker(
+				{
+					changeMonth: true,
+					changeYear: true,
+					yearRange: "-100:+0",
+					onSelect: function (selectedDate,el) {
+						var d = $(".datetimepicker").datepicker("getDate");
+						d.setHours(0);
+						selecteDate = d.getTime();
+					},
+					dateFormat: 'dd M yy'
+				}
+		);
+	});
+	// $(function() {
+	// 	var savedFormData = {
+	// 	  "createLoanApplicationForm": {
+	// 		"loanClientProvince": "Western",
+	// 		"loanClientCity": "Kampala",
+	// 		"loanClientFirstNOCIH": "8",
+	// 		"loanClientLivingArea": "URBAN",
+	// 		"loanClientStreet": "2nd street",
+	// 		"loanClientNOC": "3",
+	// 		"loanClientMartialStatus": "MARRIED",
+	// 		"loanClientEmployed": "YES",
+	// 		"loanClientEmpCompanyName": "Awamo MFI",
+	// 		"loanClientEmpMonIncome": "2,000,000",
+	// 		"loanClientEmpSector": "INFORMATION_COMMUNICATION",
+	// 		"loanClientEmpProvince": "Central",
+	// 		"loanClientStartDate": "Sun Jun 04 2017",
+	// 		"loanClientEmpNOE": "20",
+	// 		"loanClientEmpFoRe": "true",
+	// 		"loanClientEmpCity": "Kampala",
+	// 		"loanClientEmpStreet": "1st street",
+	// 		"loanClientSelfEmployed": "YES",
+	// 		"loanClientSelfEmpCompanyName": "People and sons",
+	// 		"loanClientSelfEmpMonIncome": "2,000,000",
+	// 		"loanClientSelfEmpBSector": "",
+	// 		"loanClientSelfEmpFoRe": "true",
+	// 		"loanClientSelfEmpProvince": "Western",
+	// 		"loanClientSelfStartDate": "Sun Jun 04 2017",
+	// 		"loanClientSelfEmpNOE": "5",
+	// 		"loanClientSelfEmpType": "FARMER",
+	// 		"loanClientSelfEmpAPro": "FRUITS",
+	// 		"loanClientSelfEmpCity": "Mbarara",
+	// 		"loanClientSelfEmpStreet": "8th street",
+	// 		"loanClientPrincipal": "1,500,000",
+	// 		"loanClientDuration": "9",
+	// 		"loanClientNORe": "6",
+	// 		"loanClientAmortizationType": "EQUAL_INSTALLMENTS",
+	// 		"loanClientAIR": "4",
+	// 		"loanClientDiDate": "Fri Jun 30 2017",
+	// 		"loanClientInType": "FLAT",
+	// 		"loanClientICPT": "LIKE_REPAYMENT",
+	// 		"loanClientReason": "VEHICLES",
+	// 		"loanClientCerditCT": "VEHICLE",
+	// 		"loanClientCerditCTV": "5,000,000",
+	// 		"loanClientCerditDesc": "It is car with wheels and it's it",
+	// 		"loanClientHaveGuarantor": "YES",
+	// 		"loanClientGuarantorName": "Christopher Lambert",
+	// 		"loanClientGuarantorIncome": "2,000,000"
+	// 	  }
+	// 	};
+	// 	sessionStorage.setItem("savedFormData", JSON.stringify(savedFormData));
+	// 	$('form').on('submit', function() {
+	// 		saveFormData($(this));
+	// 	});
+	// 	$('input[type="text"], input[type="number"], input[type="email"], select, textarea').on('click', function() {
+	// 		autoFillForm(findParentForm($(this)));
+	// 	});
+	// });
+</script>

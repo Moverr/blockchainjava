@@ -1,0 +1,129 @@
+.collateral {
+    position: relative;
+    margin: 0;
+}
+.collateral-controls {
+    float: none;
+    clear: both;
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+}
+.collateral-controls .collateral-control, .collateral-controls .collateral-control i {
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+.collateral-controls .collateral-control {
+    background-color: #666 !important;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: margin-left .3s;
+    margin-left: -35px;
+    float: right;
+}
+.collateral-controls:hover .collateral-control {
+    margin-left: 5px;
+}
+.collateral-controls .collateral-control:hover {
+    background-color: #828282 !important;
+    text-decoration: none;
+}
+.collateral-controls .collateral-control i {
+    line-height: 35px;
+    text-align: center;
+}
+.collateral-images {
+    position: relative;
+	margin: auto;
+	width: 292px;
+	height: 292px;
+    background-position: center 40%;
+    background-size: 40%;
+}
+.collateral-images.disabled {
+    opacity: .3;
+}
+.collateral-images.disabled .tip {
+    display: none;
+}
+.collateral-images .tip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin: 0;
+    color: #666;
+    padding: 36px 30%;
+    text-align: center;
+    line-height: 1.5em;
+}
+.collateral-images .collateral-image {
+	position: relative;
+	background-position: center;
+	width: 140px;
+	height: 140px;
+	margin-right: 12px;
+	margin-bottom: 12px;
+    background-size: 41px 35px;
+	float: left;
+}
+.collateral-images, .collateral-images .collateral-image {
+    background-color: #eee;
+    background-image: url("../../img/camera.svg");
+    /* background-image: url("../../img/bootstrap-formhelpers-currencies.flags.png"); */
+    background-repeat: no-repeat;
+}
+.collateral-images.collateral-images-loaded {
+    background: transparent;
+}
+.collateral-images .collateral-image:nth-child(even) {
+	margin-right: 0;
+	margin-bottom: 0;
+}
+.collateral-image .cropit-preview {
+    width: 100%;
+    height: 100%;
+}
+.collateral-image label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color .3s;
+}
+.collateral-image:hover label {
+    background-color: rgba(0,0,0,.8);
+}
+.collateral-image label input {
+	display: none;
+}
+.collateral-image .collateral-image-controls {
+	display: none;
+    z-index: 999;
+}
+.collateral-image-controls > span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    margin-right: 5px;
+    cursor: pointer;
+    float: left;
+}
+.collateral-image:hover .collateral-image-remove {
+    border: 1px solid #fff;
+}
+.collateral-image:hover .collateral-image-controls {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

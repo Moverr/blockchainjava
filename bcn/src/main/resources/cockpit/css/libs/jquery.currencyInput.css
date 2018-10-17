@@ -1,0 +1,36 @@
+.currency-input + .currency-input-controls {
+	z-index: 9999;
+	position: absolute;
+	display: table;
+	width: 16px;
+}
+.currency-input:disabled + .currency-input-controls {
+	display: none;
+}
+.currency-input + .currency-input-controls > div {
+	display: table-cell;
+	vertical-align: middle;
+}
+.currency-input-controls .currency-input-control {
+	display: block;
+	padding: 1px 0;
+	cursor: pointer;
+}
+.currency-input-controls .currency-input-control:hover {
+	background-color: #bbb;
+}
+.currency-input-controls .currency-input-control:after {
+	display: block;
+	margin: auto;
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+.currency-input-controls .currency-input-control.up:after {
+	border-bottom: 5px solid #333;
+}
+.currency-input-controls .currency-input-control.down:after {
+	border-top: 5px solid #333;
+}

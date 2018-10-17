@@ -1,0 +1,177 @@
+<div class="row content" id="dashboardArea">
+    <div id="dashboardProfile" class="col-lg-12">
+        <!--        <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="mdl-color-text--white material-icons" role="presentation">person</i>Your profile
+                        <button class="btn customCancelButton  pull-right" id="dashboardToProfile" data-target="profile">view/edit profile</button>
+                    </div>
+                    <div class="panel-body" id="dashboardProfileImage">
+                        <div class="col-lg-12">
+                            <div class="col-lg-4">
+                                <img class="manImg" src="images/personPlaceholderNoText.png" height="320px" width="240px" style="padding-bottom:3px;" alt="pic">
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <div class="input-group-addon">Username</div>
+                                    <input type="text" class="form-control" data-target="username"  disabled="disabled" style="text-align:right;">
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">Fullname</div>
+                                    <input type="text" class="form-control" data-target="fullname" disabled="disabled" style="text-align:right;">
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">Phone</div>
+                                    <input type="text" class="form-control" data-target="officerMasterData.phone1" disabled="disabled" style="text-align:right;">
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">Email</div>
+                                    <input type="text" class="form-control" data-target="email" disabled="disabled" style="text-align:right;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+    </div>
+
+    <div id="dashboardOverview" class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span style="padding-right:15px;" ><img src="images/1446566548_1.png" height="42" width="42" style="padding-bottom:3px;"></span>Overview
+<!--                <button class="btn customCancelButton  pull-right" id="dashboardToReports" data-target="reporting"><span class="mdl-color-text--white material-icons">&#xE148;</span>view reports</button>-->
+            </div>
+            <div class="panel-body">
+                <div class="col-lg-12">
+                    <div class="col-lg-6">
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Day</th>
+                                        <th>Week</th>
+                                        <th>Month</th>
+                                        <th>Year</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="dashboardOverviewReportNewClients" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Created Clients" >
+                                        <td class="prefix">New clients</td>
+                                        <td colspan="4">no data available</td>
+                                    </tr>
+                                    <tr id="dashboardOverviewReportNewLoanApplications" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Submitted Loan applications pending approval" >
+                                        <td class="prefix">New loan applications</td>
+                                        <td colspan="4">no data available</td>
+                                    </tr>
+                                    <tr id="dashboardOverviewReportNewSavingsAccounts" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Submitted Savings Account applications pending approval" >
+                                        <td class="prefix">New savings accounts</td>
+                                        <td colspan="4">no data available</td>
+                                    </tr>
+
+                                    <tr id="dashboardOverviewReportNewActiveSavingsAccounts" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Active Savings Accounts">
+                                        <td class="prefix">Active Savings Accounts</td>
+                                        <td colspan="4">no data available</td>
+                                    </tr>
+
+                                    <tr id="dashboardOverviewReportActiveClients" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Clients who have transacted in last  6 months " >
+                                        <td class="prefix">Total Active Clients</td>
+                                        <td colspan="4">no data available</td>
+                                    </tr>
+                                    <tr id="dashboardOverviewReportPassiveClients" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Clients who have not transacted in last 6 months">
+                                        <td class="prefix">Total Passive Clients</td>
+                                        <td colspan="4">no data available</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="table-responsive">
+                            <table  class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+
+                                    <tr id="dashboardOverviewReportTotalActiveLoans" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Total loans in Status Active ">
+                                        <td class="prefix">Total Active Loans</td>
+                                        <td>no data available</td>
+                                    </tr>
+                                    <tr id="dashboardOverviewReportTotalNewLoanApplications" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Total submitted Loan applications pending approval " >
+                                        <td class="prefix">New Loan Applications</td>
+                                        <td>no data available</td>
+                                    </tr>
+
+                                    <tr id="dashboardOverviewReportTotalNewSavingsAccounts" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Total Savings Account applications pending approval ">
+                                        <td class="prefix">New Savings Accounts</td>
+                                        <td>no data available</td>
+                                    </tr>
+
+                                    <tr id="dashboardOverviewReporttotalClients" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Total number of clients " >
+                                        <td class="prefix">Total  Clients</td>
+                                        <td  >no data available</td>
+                                    </tr>
+
+
+                                    <tr id="dashboardOverviewReportTotalOutstandingLoansBalance" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Sum of principal amount for Loans in Status Active" >
+                                        <td class="prefix">Total Outstanding</td>
+                                        <td>no data available</td>
+                                    </tr>
+
+                                    <tr id="dashboardOverviewReportTotalSavingsAmount" class="customToolTip showtooltip" data-toggle="tooltip" data-placement="top" title="Sum of account balance for Savings Accounts in Status Active" >
+                                        <td class="prefix">Total Savings</td>
+                                        <td>no data available</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboardLoanApplications" class="col-lg-12">
+        <!--        <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span style="padding-right:15px;" ><img  src="images/new_loan_application.png" height="42" width="42" style="padding-bottom:3px;" ></span>Pending Loan Applications
+                        <button class="btn customCancelButton  pull-right" id="dashboardToActionRequired" data-target="actionRequiredLoanApplications">view action required</button>
+                    </div>
+                    <div class="panel-body scrollable" style="height: 515px; overflow-y: scroll;">
+                        <div class="panel-body scrollable">
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25px; "></th>
+                                        <th>Name</th>
+                                        <th>Disburse</th>
+                                        <th>Principal</th>
+                                        <th>Interest p.a.</th>
+                                        <th>Duration</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>-->
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="images/awamo_Cockpit_logo_white_v11.png" alt="awamo 360 cockpit"></a>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="user">
+                <div class="input-group">
+                    <div class="input-group-addon" style="background-color: #DDDDDD !important; padding-bottom: 0px"><i class="material-icons" style="color:gray">person</i></div>
+                    <input type="text" class="form-control" value="Dirk Podolak" disabled="disabled" id="username" style="background-color: #A9A9A9;color :#FFF; height: 35px;">
+                </div>
+            </li>
+            <li class="user">
+                <a href="#" class="customToolTip" id="syncNow" data-toggle="tooltip" title="Nothing to Sync" data-action="synchronizeNow" role="button" style="padding-left: 20px;"><span class="mdl-color-text--white material-icons" style="width: 50px;">sync</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="padding-left: 20px;"><span class="glyphicon glyphicon-menu-hamburger" style="width: 50px;"></span></a>
+                <ul class="dropdown-menu">
+                    <li data-handler="Communication" data-action="logout" id="logout">
+                        <a href="#"><i class="mdl-color-text--white material-icons" style="color:gray">exit_to_app</i>&nbsp; &nbsp; &nbsp; &nbsp;  Log out</a>
+                    </li>
+                    <li data-handler="Communication" data-action="showProfile" id="profile">
+                        <a href="#"><i class="mdl-color-text--white material-icons" style="color:gray">person</i>&nbsp; &nbsp; &nbsp; &nbsp; View Profile</a>
+                    </li>
+                    <li data-handler="Communication" data-action="help" id="get_help">
+                        <a href="#"><i class="mdl-color-text--white material-icons" style="color:gray">help_outline</i>&nbsp; &nbsp; &nbsp; &nbsp; Help</a>
+                    </li>
+                    <li data-handler="Communication" data-action="about" id="about">
+                        <a href="#"><i class="mdl-color-text--white material-icons" style="color:gray">info_outline</i>&nbsp; &nbsp; &nbsp; &nbsp; About</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
