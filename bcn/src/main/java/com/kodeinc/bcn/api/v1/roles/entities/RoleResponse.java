@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.roles.entities;
-
-import com.codemovers.scholar.engine.api.v1.permissions.entities.PermissionsResponse;
+package com.kodeinc.bcn.api.v1.roles.entities;
+ 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.kodeinc.bcn.api.v1.permissions.entities.PermissionsResponse;
 import java.util.Arrays;
 import java.util.Objects;
 

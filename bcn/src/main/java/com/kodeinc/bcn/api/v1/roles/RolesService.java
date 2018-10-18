@@ -5,11 +5,11 @@
  */
 package com.kodeinc.bcn.api.v1.roles;
 
-import com.codemovers.scholar.engine.api.v1.roles.entities.RoleResponse;
-import com.codemovers.scholar.engine.api.v1.permissions.entities._Permission;
-import com.codemovers.scholar.engine.api.v1.roles.entities._Role;
 import com.kodeinc.bcn.api.v1.abstracts.AbstractService;
 import com.kodeinc.bcn.api.v1.accounts.entities.AuthenticationResponse;
+import com.kodeinc.bcn.api.v1.permissions.entities._Permission;
+import com.kodeinc.bcn.api.v1.roles.entities.RoleResponse;
+import com.kodeinc.bcn.api.v1.roles.entities._Role;
 import com.kodeinc.bcn.db.entities.Roles;
 import java.security.Permissions;
 import java.util.ArrayList;

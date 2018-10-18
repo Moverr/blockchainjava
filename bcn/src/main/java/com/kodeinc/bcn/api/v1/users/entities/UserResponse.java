@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.users.entities;
+package com.kodeinc.bcn.api.v1.users.entities;
 
-import com.codemovers.scholar.engine.api.v1.profile.entities.ProfileResponse;
-import com.codemovers.scholar.engine.api.v1.roles.entities.RoleResponse;
-import com.codemovers.scholar.engine.api.v1.staff.entities.StaffResponse;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.kodeinc.bcn.api.v1.profile.entities.ProfileResponse;
+import com.kodeinc.bcn.api.v1.roles.entities.RoleResponse;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,7 +17,6 @@ import java.util.Objects;
  *
  * @author Mover 11/22/2017
  */
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
 public class UserResponse {
@@ -32,7 +30,6 @@ public class UserResponse {
     private String authentication;
     private Long dateCreated;
     private ProfileResponse profile;
-    private StaffResponse staff;
 
     public UserResponse() {
     }
@@ -113,14 +110,6 @@ public class UserResponse {
         this.profile = profile;
     }
 
-    public StaffResponse getStaff() {
-        return staff;
-    }
-
-    public void setStaff(StaffResponse staff) {
-        this.staff = staff;
-    }
-
     @Override
     public int hashCode() {
         int hash = 3;
@@ -133,7 +122,7 @@ public class UserResponse {
         hash = 61 * hash + Objects.hashCode(this.authentication);
         hash = 61 * hash + Objects.hashCode(this.dateCreated);
         hash = 61 * hash + Objects.hashCode(this.profile);
-        hash = 61 * hash + Objects.hashCode(this.staff);
+
         return hash;
     }
 
@@ -176,9 +165,7 @@ public class UserResponse {
         if (!Objects.equals(this.profile, other.profile)) {
             return false;
         }
-        if (!Objects.equals(this.staff, other.staff)) {
-            return false;
-        }
+
         return true;
     }
 
@@ -194,7 +181,6 @@ public class UserResponse {
                 + ", authentication=" + authentication
                 + ", dateCreated=" + dateCreated
                 + ", profile=" + profile
-                + ", staff=" + staff
                 + '}';
     }
 

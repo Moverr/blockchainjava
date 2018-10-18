@@ -5,12 +5,12 @@
  */
 package com.kodeinc.bcn.api.v1.users;
 
-import com.codemovers.scholar.engine.api.v1.users.entities.Login;
-import com.codemovers.scholar.engine.api.v1.permissions.entities.PermissionsResponse;
-import com.codemovers.scholar.engine.api.v1.users.entities.UserResponse;
-import com.codemovers.scholar.engine.api.v1.users.entities._User;
 import com.kodeinc.bcn.api.v1.abstracts.AbstractService;
 import com.kodeinc.bcn.api.v1.accounts.entities.AuthenticationResponse;
+import com.kodeinc.bcn.api.v1.permissions.entities.PermissionsResponse;
+import com.kodeinc.bcn.api.v1.users.entities.Login;
+import com.kodeinc.bcn.api.v1.users.entities.UserResponse;
+import com.kodeinc.bcn.api.v1.users.entities._User;
 import com.kodeinc.bcn.db.controllers.UserProfileJpaController;
 import com.kodeinc.bcn.db.controllers.UserRoleJpaController;
 import com.kodeinc.bcn.db.controllers.UsersJpaController;

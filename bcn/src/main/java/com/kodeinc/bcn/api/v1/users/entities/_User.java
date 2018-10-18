@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.users.entities;
+package com.kodeinc.bcn.api.v1.users.entities;
 
-import com.codemovers.scholar.engine.annotation.Mandatory;
-import com.codemovers.scholar.engine.api.v1.abstracts.AbstractEntity;
-import com.codemovers.scholar.engine.api.v1.profile.entities.Profiles;
-import com.codemovers.scholar.engine.api.v1.staff.entities._Staff;
-import static com.codemovers.scholar.engine.helper.Utilities.validateMandatoryFields;
-import com.codemovers.scholar.engine.helper.enums.StatusEnum;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.kodeinc.bcn.annotation.Mandatory;
+import com.kodeinc.bcn.api.v1.abstracts.AbstractEntity;
+import com.kodeinc.bcn.api.v1.profile.entities.Profiles;
+import static com.kodeinc.bcn.helper.Utilities.validateMandatoryFields;
+import com.kodeinc.bcn.helper.enums.StatusEnum;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -34,7 +33,6 @@ public class _User extends AbstractEntity {
     private @Mandatory
     String[] roles;
     Profiles profile;
-    _Staff staff;
 
     public _User() {
     }
@@ -115,14 +113,6 @@ public class _User extends AbstractEntity {
         this.profile = profile;
     }
 
-    public _Staff getStaff() {
-        return staff;
-    }
-
-    public void setStaff(_Staff staff) {
-        this.staff = staff;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
@@ -135,7 +125,6 @@ public class _User extends AbstractEntity {
         hash = 67 * hash + Objects.hashCode(this.date_created);
         hash = 67 * hash + Arrays.deepHashCode(this.roles);
         hash = 67 * hash + Objects.hashCode(this.profile);
-        hash = 67 * hash + Objects.hashCode(this.staff);
         return hash;
     }
 
@@ -178,9 +167,7 @@ public class _User extends AbstractEntity {
         if (!Objects.equals(this.profile, other.profile)) {
             return false;
         }
-        if (!Objects.equals(this.staff, other.staff)) {
-            return false;
-        }
+
         return true;
     }
 
@@ -201,7 +188,6 @@ public class _User extends AbstractEntity {
                 + ", externalid=" + externalid
                 + ", date_created=" + date_created
                 + ", roles=" + Arrays.asList(roles)
-                + ", staff=" + staff
                 + ", profile=" + profile
                 + "}";
     }

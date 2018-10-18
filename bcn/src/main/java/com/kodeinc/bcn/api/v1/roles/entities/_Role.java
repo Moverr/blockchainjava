@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.roles.entities;
+package com.kodeinc.bcn.api.v1.roles.entities;
 
-import com.codemovers.scholar.engine.api.v1.permissions.entities._Permission;
-import com.codemovers.scholar.engine.annotation.Mandatory;
-import com.codemovers.scholar.engine.api.v1.abstracts.AbstractEntity;
-import static com.codemovers.scholar.engine.helper.Utilities.validateMandatoryFields;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.kodeinc.bcn.annotation.Mandatory;
+import com.kodeinc.bcn.api.v1.abstracts.AbstractEntity;
+import com.kodeinc.bcn.api.v1.permissions.entities._Permission;
+import static com.kodeinc.bcn.helper.Utilities.validateMandatoryFields;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Objects;

@@ -3,20 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.users;
+package com.kodeinc.bcn.api.v1.users;
 
-import com.codemovers.scholar.engine.api.v1.abstracts.AbstractEndpoint;
-import com.codemovers.scholar.engine.api.v1.accounts.entities.AuthenticationResponse;
-import com.codemovers.scholar.engine.api.v1.users.entities.Login;
-import com.codemovers.scholar.engine.api.v1.users.entities.UserResponse;
-import com.codemovers.scholar.engine.api.v1.users.entities._User;
-import com.codemovers.scholar.engine.db.entities.SchoolData;
-import static com.codemovers.scholar.engine.helper.Utilities.tenantdata;
-import com.codemovers.scholar.engine.helper.exceptions.BadRequestException;
+import com.kodeinc.bcn.api.v1.abstracts.AbstractEndpoint;
+import com.kodeinc.bcn.api.v1.accounts.entities.AuthenticationResponse;
+import com.kodeinc.bcn.api.v1.users.entities.Login;
+import com.kodeinc.bcn.api.v1.users.entities.UserResponse;
+import com.kodeinc.bcn.api.v1.users.entities._User;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.BadRequestException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
@@ -52,8 +50,8 @@ public class UsersEndpoint extends AbstractEndpoint<_User, UserResponse> {
     }
 
     @Override
-    public void validate(SchoolData schoolData, String authentication) throws Exception {
-        this.authentication = service.validateAuthentication(schoolData, authentication);
+    public void validate(String authentication) throws Exception {
+        this.authentication = service.validateAuthentication(authentication);
     }
 
     //todo: create user
@@ -65,9 +63,9 @@ public class UsersEndpoint extends AbstractEndpoint<_User, UserResponse> {
             @HeaderParam("authentication") String authentication,
             @Context HttpServletRequest httpRequest) throws Exception {
         try {
-        validate(tenantdata, authentication);
-        String logId = context.getProperty("logId").toString();
-            return service.create(tenantdata, entity, this.authentication);
+            validate(authentication);
+            String logId = context.getProperty("logId").toString();
+            return service.create(entity, this.authentication);
         } catch (WebApplicationException er) {
             er.printStackTrace();
             System.out.println("MESSAGE : " + er.getMessage());
@@ -108,8 +106,7 @@ public class UsersEndpoint extends AbstractEndpoint<_User, UserResponse> {
 
         try {
             String logId = context.getProperty("logId").toString();
-            LOG.log(Level.INFO, " IF THIS WORKS {0} CELEBERATION ", tenantdata.getExternalId());
-            return service.login(tenantdata, login, logId);
+            return service.login(login, logId);
         } catch (BadRequestException exception) {
             throw exception;
         } catch (Exception ex) {
@@ -138,10 +135,10 @@ public class UsersEndpoint extends AbstractEndpoint<_User, UserResponse> {
             @Context HttpServletRequest httpRequest
     ) throws Exception {
         try {
-            validate(tenantdata, authentication);
+            validate(authentication);
             String logId = context.getProperty("logId").toString();
-            LOG.log(Level.INFO, " IF THIS WORKS {0} CELEBERATION ", tenantdata.getExternalId());
-            service.deactivate(tenantdata, id);
+
+            service.deactivate(id);
             return Response.ok().build();
 
         } catch (Exception er) {
@@ -160,10 +157,10 @@ public class UsersEndpoint extends AbstractEndpoint<_User, UserResponse> {
             @Context HttpServletRequest httpRequest
     ) throws Exception {
         try {
-            validate(tenantdata, authentication);
+            validate(authentication);
             String logId = context.getProperty("logId").toString();
-            LOG.log(Level.INFO, " IF THIS WORKS {0} CELEBERATION ", tenantdata.getExternalId());
-            service.activate(tenantdata, id);
+
+            service.activate(id);
             return Response.ok().build();
 
         } catch (Exception er) {
@@ -182,9 +179,9 @@ public class UsersEndpoint extends AbstractEndpoint<_User, UserResponse> {
             @HeaderParam("authentication") String authentication,
             HttpServletRequest httpRequest) throws Exception {
         try {
-            validate(tenantdata, authentication);
+            validate(authentication);
             String logId = context.getProperty("logId").toString();
-            return service.list(tenantdata, offset, limit, this.authentication);
+            return service.list(offset, limit, this.authentication);
         } catch (Exception er) {
             er.printStackTrace();
             throw er;

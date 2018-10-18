@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.roles;
+package com.kodeinc.bcn.api.v1.roles;
 
-import com.codemovers.scholar.engine.api.v1.abstracts.AbstractEndpoint;
-import com.codemovers.scholar.engine.api.v1.accounts.entities.AuthenticationResponse;
-import com.codemovers.scholar.engine.api.v1.roles.entities.RoleResponse;
-import com.codemovers.scholar.engine.api.v1.roles.entities._Role;
-import com.codemovers.scholar.engine.api.v1.users.UserService;
-import com.codemovers.scholar.engine.api.v1.users.UsersEndpoint;
-import com.codemovers.scholar.engine.db.entities.SchoolData;
-import static com.codemovers.scholar.engine.helper.Utilities.tenantdata;
-import com.codemovers.scholar.engine.helper.exceptions.BadRequestException;
+import com.kodeinc.bcn.api.v1.abstracts.AbstractEndpoint;
+import com.kodeinc.bcn.api.v1.accounts.entities.AuthenticationResponse;
+import com.kodeinc.bcn.api.v1.roles.entities.RoleResponse;
+import com.kodeinc.bcn.api.v1.roles.entities._Role;
+import com.kodeinc.bcn.api.v1.users.UserService;
+import com.kodeinc.bcn.api.v1.users.UsersEndpoint;
+import com.kodeinc.bcn.helper.exceptions.BadRequestException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,8 +48,8 @@ public class RolesEndpoint extends AbstractEndpoint<_Role, RoleResponse> {
     }
 
     @Override
-    public void validate(SchoolData schoolData, String authentication) throws Exception {
-        this.authentication = UserService.getInstance().validateAuthentication(schoolData, authentication);
+    public void validate( String authentication) throws Exception {
+        this.authentication = UserService.getInstance().validateAuthentication( authentication);
     }
 
     @POST
@@ -60,8 +58,8 @@ public class RolesEndpoint extends AbstractEndpoint<_Role, RoleResponse> {
     @Override
     public RoleResponse create(_Role entity, @HeaderParam("authentication") String authentication, @Context HttpServletRequest httpRequest) throws Exception {
         try {
-            validate(tenantdata, authentication);
-            return service.create(tenantdata, entity, this.authentication);
+            validate( authentication);
+            return service.create( entity, this.authentication);
         } catch (BadRequestException exception) {
             throw exception;
         } catch (Exception ex) {
@@ -82,9 +80,9 @@ public class RolesEndpoint extends AbstractEndpoint<_Role, RoleResponse> {
             @Context HttpServletRequest httpRequest
     ) throws Exception {
         try {
-            validate(tenantdata, authentication);
+            validate( authentication);
             String logId = context.getProperty("logId").toString();
-            return service.list(tenantdata, offset, limit, this.authentication);
+            return service.list( offset, limit, this.authentication);
         } catch (WebApplicationException er) {
             throw er;
         } catch (Exception er) {
@@ -100,9 +98,9 @@ public class RolesEndpoint extends AbstractEndpoint<_Role, RoleResponse> {
             @HeaderParam("authentication") String authentication,
             @Context HttpServletRequest httpRequest) throws Exception {
         try {
-            validate(tenantdata, authentication);
+            validate( authentication);
             String logId = context.getProperty("logId").toString();
-            return service.getById(tenantdata, id, this.authentication);
+            return service.getById( id, this.authentication);
         } catch (WebApplicationException er) {
             throw er;
         } catch (Exception er) {
@@ -116,7 +114,7 @@ public class RolesEndpoint extends AbstractEndpoint<_Role, RoleResponse> {
             @HeaderParam("authentication") String authentication,
             @Context HttpServletRequest httpRequest) throws Exception {
         try {
-            validate(tenantdata, authentication);
+            validate( authentication);
             String logId = context.getProperty("logId").toString();
 
             return null;
