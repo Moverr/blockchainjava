@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package com.kodeinc.bcn.api.v1.accounts.entities;
-
-import com.codemovers.scholar.engine.api.v1.permissions.entities.PermissionsResponse;
+ 
+import com.kodeinc.bcn.api.v1.permissions.entities.PermissionsResponse;
 import java.util.List;
 
 /**

@@ -5,7 +5,7 @@
  */
 package com.kodeinc.bcn.api.v1.abstracts;
 
-import com.codemovers.scholar.engine.api.v1.users.UserService; 
+import com.kodeinc.bcn.api.v1.users.UserService;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

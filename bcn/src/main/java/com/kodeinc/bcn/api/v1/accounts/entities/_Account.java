@@ -7,6 +7,7 @@ package com.kodeinc.bcn.api.v1.accounts.entities;
  
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.kodeinc.bcn.annotation.Mandatory;
+import com.kodeinc.bcn.api.v1.profile.entities.Profiles;
 import static com.kodeinc.bcn.helper.Utilities.validateMandatoryFields;
 import com.kodeinc.bcn.helper.enums.StatusEnum;
 import java.util.Arrays;
@@ -17,7 +18,7 @@ import java.util.Objects;
  * @author MOVER 11/15/2017
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _Account  {
+public class _Account extends Profiles {
 
     private @Mandatory
     String username;

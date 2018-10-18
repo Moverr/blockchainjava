@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.accounts;
+package com.kodeinc.bcn.api.v1.accounts;
 
-import com.codemovers.scholar.engine.api.v1.abstracts.AbstractService;
-import com.codemovers.scholar.engine.api.v1.accounts.entities._Account;
+import com.kodeinc.bcn.api.v1.abstracts.AbstractService;
+import com.kodeinc.bcn.api.v1.accounts.entities._Account;
 import java.util.logging.Logger;
 
 /**

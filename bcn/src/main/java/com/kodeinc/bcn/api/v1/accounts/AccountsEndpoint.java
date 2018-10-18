@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemovers.scholar.engine.api.v1.accounts;
-
-import com.codemovers.scholar.engine.api.v1.users.UserService;
-import com.codemovers.scholar.engine.db.entities.SchoolData;
+package com.kodeinc.bcn.api.v1.accounts;
+ 
+import com.kodeinc.bcn.api.v1.users.UserService;
 import java.util.logging.Logger;
 import javax.ws.rs.Path;
 import javax.ws.rs.container.ContainerRequestContext;
@@ -32,8 +31,8 @@ public class AccountsEndpoint {
 
     //todo: find if the user is ligerly in 
     //todo: check permission to perform a given operation 
-    public void validate(SchoolData schoolData, String authentication) throws Exception {
-        UserService.getInstance().validateAuthentication(schoolData, authentication);
+    public void validate( String authentication) throws Exception {
+        UserService.getInstance().validateAuthentication( authentication);
     }
 
 }

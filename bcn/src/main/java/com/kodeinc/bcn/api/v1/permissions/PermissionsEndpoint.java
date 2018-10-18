@@ -4,13 +4,11 @@
  * and open the template in the editor.
  */
 package com.kodeinc.bcn.api.v1.permissions;
-
-import com.codemovers.scholar.engine.api.v1.accounts.entities.AuthenticationResponse;
-import com.codemovers.scholar.engine.api.v1.permissions.PermissionsService;
-import com.codemovers.scholar.engine.api.v1.permissions.entities.PermissionsResponse;
-import com.codemovers.scholar.engine.api.v1.permissions.entities._Permission;
-import com.codemovers.scholar.engine.db.entities.SchoolData; 
+ 
 import com.kodeinc.bcn.api.v1.abstracts.AbstractEndpoint;
+import com.kodeinc.bcn.api.v1.accounts.entities.AuthenticationResponse;
+import com.kodeinc.bcn.api.v1.permissions.entities.PermissionsResponse;
+import com.kodeinc.bcn.api.v1.permissions.entities._Permission;
 import com.kodeinc.bcn.api.v1.users.UserService;
 import java.util.List;
 import java.util.logging.Logger;
@@ -43,8 +41,8 @@ public class PermissionsEndpoint extends AbstractEndpoint<_Permission, Permissio
     }
 
     @Override
-    public void validate(SchoolData schoolData, String authentication) throws Exception {
-        this.authentication = UserService.getInstance().validateAuthentication(schoolData, authentication);
+    public void validate(String authentication) throws Exception {
+        this.authentication = UserService.getInstance().validateAuthentication( authentication);
     }
 
     @GET
@@ -58,9 +56,9 @@ public class PermissionsEndpoint extends AbstractEndpoint<_Permission, Permissio
             @Context HttpServletRequest httpRequest
     ) throws Exception {
         try {
-            validate(tenantdata, authentication);
+            validate( authentication);
             String logId = context.getProperty("logId").toString();
-            return service.list(tenantdata, offset, limit, this.authentication);
+            return service.list( offset, limit, this.authentication);
         } catch (WebApplicationException er) {
             throw er;
         } catch (Exception er) {
